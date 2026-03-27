@@ -82,13 +82,17 @@
 
   <div class="section-title">1. Minimale Einbettung</div>
 
-  <div class="code-block"><span class="cmt">&lt;!-- Polyfills + Haupt-Bundle laden --&gt;</span>
+  <div class="code-block"><span class="cmt">&lt;!-- Bundles laden (Reihenfolge wichtig!) --&gt;</span>
+<span class="tag">&lt;script</span> <span class="attr">src</span>=<span class="val">"https://wlo-quellenliste-api.vercel.app/wc/runtime.js"</span><span class="tag">&gt;&lt;/script&gt;</span>
 <span class="tag">&lt;script</span> <span class="attr">src</span>=<span class="val">"https://wlo-quellenliste-api.vercel.app/wc/polyfills.js"</span><span class="tag">&gt;&lt;/script&gt;</span>
 <span class="tag">&lt;script</span> <span class="attr">src</span>=<span class="val">"https://wlo-quellenliste-api.vercel.app/wc/main.js"</span><span class="tag">&gt;&lt;/script&gt;</span>
 <span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="val">"stylesheet"</span> <span class="attr">href</span>=<span class="val">"https://wlo-quellenliste-api.vercel.app/wc/styles.css"</span><span class="tag">&gt;</span>
 
 <span class="cmt">&lt;!-- Webkomponente einbetten --&gt;</span>
-<span class="tag">&lt;wlo-sources</span> <span class="attr">api-base</span>=<span class="val">"https://wlo-quellenliste-api.vercel.app"</span><span class="tag">&gt;&lt;/wlo-sources&gt;</span></div>
+<span class="tag">&lt;wlo-sources</span> <span class="attr">api-base</span>=<span class="val">"https://wlo-quellenliste-api.vercel.app"</span><span class="tag">&gt;&lt;/wlo-sources&gt;</span>
+
+<span class="cmt">Hinweis: Die einbettende HTML-Seite muss über HTTP(S) ausgeliefert werden.</span>
+<span class="cmt">Lokales Öffnen als file:// funktioniert nicht (Browser blockiert Cross-Origin-Requests).</span></div>
 
   <!-- ═══════════════════════════════════════════════════════════════════ -->
   <!-- Einbettungs-Beispiel: Mit Konfiguration                           -->
@@ -137,7 +141,7 @@
     <p>
       WLO Quellenverzeichnis API · 
       <a href="/docs" target="_blank">API-Dokumentation (Swagger)</a> · 
-      <a href="/wc/main.js">main.js (~291 kB)</a>
+      <a href="/wc/main.js">main.js (~286 kB)</a>
     </p>
   </footer>
 
