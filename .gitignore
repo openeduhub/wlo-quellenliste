@@ -1,0 +1,19 @@
+# Node / Angular
+webcomponent/node_modules/
+webcomponent/dist/
+webcomponent/.angular/
+
+# Python
+backend/__pycache__/
+backend/*.pyc
+backend/.venv/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo

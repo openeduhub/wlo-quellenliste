@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "api/index.py", "use": "@vercel/python" },
+    { "src": "public/**", "use": "@vercel/static" }
+  ],
+  "headers": [
+    {
+      "source": "/wc/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Access-Control-Allow-Methods", "value": "GET, OPTIONS" },
+        { "key": "Cache-Control", "value": "public, max-age=3600, s-maxage=3600" }
+      ]
+    },
+    {
+      "source": "/example(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" }
+      ]
+    }
+  ],
+  "rewrites": [
+    { "source": "/wc/:path*", "destination": "/public/wc/:path*" },
+    { "source": "/example.html", "destination": "/public/example.html" },
+    { "source": "/example", "destination": "/public/example.html" },
+    { "source": "/(.*)", "destination": "/api/index.py" }
+  ]
+}

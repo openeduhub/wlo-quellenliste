@@ -1,0 +1,354 @@
+﻿Node-Id;Titel;Url;Bezugsquelle;Spider;Liste
+4c1df1cc-2d5a-4f55-aeac-039630326b99; MaterialdatenbankChemie;https://www.schulentwicklung.nrw.de/sinus/front_content.php?idart=15407;;;whitelist
+16489b8d-1a07-41ef-927c-f3a03b7cbb2b; ZUM-Unterrichten;https://unterrichten.zum.de/wiki/Hauptseite;zum_spider;zum_spider;whitelist
+12ebfa61-9828-42b4-a326-b2f8c2b0ff54;17 Ziele für Nachhaltige Entwicklung - Agenda 2030 der UN;https://17ziele.de/;;;whitelist
+4da2afa6-f7db-4c8a-91f0-56472fc05133;4teachers;https://www.4teachers.de/;wirlernenonline_spider;wirlernenonline_spider;whitelist
+1804c4a6-0e40-4c36-906b-9c220c541242;Animationen - Didaktik der Chemie - BERGISCHE UNIVERSITÄT WUPPERTAL;https://chemiedidaktik.uni-wuppertal.de/index.php?id=4388&L=0;Bergische Universität Wuppertal;;whitelist
+4627407d-2bea-4e65-96d7-34b735e2560b;Arbeitsblätter zur Alphabetisierung und für Deutsch A1 - kostenlos;https://drive.google.com/drive/folders/0B8pEQ5Hck9-0cENyYW1KcGpianc?resourcekey=0-lWWSNm2F9rWl2e082qfQwA&usp=sharing;;;whitelist
+5732b47c-1ee1-443a-b2b4-7c1ee1f43a33;Aufgaben und Informationen in einem Projekt bereitstellen und strukturieren;https://www.taskcards.de/#/home/start;;;whitelist
+fe66875f-b37f-470c-9b10-d82cfbdd7a7e;BERUFENET - Berufsinformationen einfach finden;https://berufenet.arbeitsagentur.de/berufenet/faces/index?path=null;;;whitelist
+da8639d5-66b8-4457-ad8f-9a991ecad5d2;BNE-Portal;https://www.bne-portal.de;bne_portal_spider;bne_portal_spider;whitelist
+8b387584-facb-4ac5-8276-ab3fffb09f3f;Bau und Fall der Berliner Mauer;https://www.chronik-der-mauer.de;;;whitelist
+50a69331-2047-4a3a-9634-f5a61143e2c9;Bildungsmaterialien | Portal Globales Lernen;https://www.globaleslernen.de/de/bildungsmaterialien;;;whitelist
+4e7d7b0e-9652-463d-ae3a-43ebc2e4c30b;Bildungsmediathek NRW - Medien für Schule und Bildung;https://www.bildungsmediathek-nrw.de/;;;whitelist
+61ee9a21-be8e-4560-8b6b-475c9692ad59;Bildwörterbücher Ukrainisch - Arabisch | TüftelAkademie;https://tueftelakademie.de/fuer-zuhause/bilderwoerterbuch/;;;whitelist
+c45ad09e-3d64-4d73-83ab-66149a89936e;Biologie Lernprogramme;https://biologie-lernprogramme.de;biologie_lernprogramme_spider;biologie_lernprogramme_spider;whitelist
+b23cf2a4-a0cc-4272-b5f2-3a398dd7c27e;Bundeszentrale für politische Bildung;https://www.bpb.de/;bpb_spider;bpb_spider;whitelist
+733d50cc-cfb2-4506-acd3-8760dcdbf8a8;Campus KI;https://ki-campus.org;;;whitelist
+0cff14de-74b4-4af0-aaa7-2a4d4144ad6f;Chaos macht Schule;https://www.ccc.de/schule;wirlernenonline_spider;wirlernenonline_spider;whitelist
+7bdc8cf7-434e-4e8d-9f72-d1f8b292c47f;Chemie Interaktiv;https://chemie-interaktiv.net/;wirlernenonline_spider;wirlernenonline_spider;whitelist
+b5bd492e-bd39-4ff9-836a-36a6102aac40;Chemie Lernprogramme;https://www.chemie-lernprogramme.de;chemie_lernprogramme_spider;chemie_lernprogramme_spider;whitelist
+f98b313a-fb7b-40de-9abb-c76b08d7021c;Chemistry Simulation - JavaLab;https://javalab.org/en/category/chemistry_en/;;;whitelist
+2d2f64b8-1cc4-42e2-b0fd-a478b2736f24;Climate Change: Vital Signs of the Planet;https://climate.nasa.gov/resources/education/;;;whitelist
+747f7a6e-cfa1-4e54-b1d5-da9d62b167c5;CrypTool-Portal;https://www.cryptool.org/;wirlernenonline_spider;wirlernenonline_spider;whitelist
+e23a257d-3523-4581-ba25-7d35232581eb;Decision Coaching - Patient Decision Aids - Ottawa Hospital Research Institute;https://decisionaid.ohri.ca/coaching.html;;;whitelist
+eec4eae0-97e3-45e4-b33f-acdab2d09643;Deutsch Digital | Digitale Weiterbildung;https://deutsch-digital.eu;;;whitelist
+64546f0d-8965-4232-8f72-69670533601d;DiLerTube;https://www.dilertube.de;dilertube_spider;dilertube_spider;whitelist
+fc7f8f67-650a-4ee4-b217-43c3713caa2a;Digital Learning Lab;https://digitallearninglab.de;digitallearninglab_spider;digitallearninglab_spider;whitelist
+2dc64f6d-c9c8-43e6-a47f-be54fd210e2e;Digitaler Methodenkoffer;https://medienkompetenzrahmen.nrw/unterrichtsmaterialien/;;;whitelist
+46e6544b-a9d6-4234-bdbe-bc2b660f134a;Edmond NRW;http://www.edmond-nrw.de/;wirlernenonline_spider;wirlernenonline_spider;whitelist
+88b91498-f153-4a6f-bc44-cb57cd530d61;Edulabs: freie Unterrichtsideen;https://edulabs.de/oer/;wirlernenonline_spider;wirlernenonline_spider;whitelist
+2b93c880-cb7a-4a6c-a980-4d95da1d739a;Erinnerungsorte | bpb;https://www.bpb.de/geschichte/nationalsozialismus/erinnerungsorte/;bpb_spider;bpb_spider;whitelist
+0e163c04-0bd6-45b5-963c-040bd6d5b5a6;FREI DAY | Schule im Aufbruch;https://frei-day.org/;;;whitelist
+e6b4712e-01d3-4366-b15d-837f29bc6ab8;Faszination Chemie: Startseite;https://faszinationchemie.de/;;;whitelist
+5798c9f5-f7d0-4553-8c8e-9671fed484eb;Fobizz;https://fobizz.com/unterrichtsmaterialien/;fobizz_spider;fobizz_spider;whitelist
+2f63e006-6d9a-460e-a10d-a6c9d2538344;Fond der Chemischen Industrie | Unterrichtsmaterialen;https://www.vci.de/fonds/schulpartnerschaft/unterrichtsmaterialien/seiten.jsp;wirlernenonline_spider;wirlernenonline_spider;whitelist
+1c52beaa-c646-4ffd-92be-aac646cffd29;Fortbildungsmaterial für Schulen - Themenfelder: Pädagogische Herausforderungen meistern! Digitale Souveränität erreichen!;https://librepro.de/lehrerfortbildung-material/;;;whitelist
+c5e8c1a4-ca8e-4737-9809-bdffe0141b79;GeoGebra;https://www.geogebra.org/;geogebra_spider;geogebra_spider;whitelist
+facccb42-11f1-48f6-a9ac-4a3434c77873;GeoGebra (neu);https://www.geogebra.org/;geogebra_spider;geogebra_spider;whitelist
+fe1691f1-70f7-4ccd-88f5-f0406b439e9b;GinkgoMaps;http://www.ginkgomaps.com/index_de.html;ginkgomaps_spider;ginkgomaps_spider;whitelist
+210f0724-781d-43cc-9fae-988b8af5caa5;Greenpeace;https://www.greenpeace.de/bildungsmaterialien;wirlernenonline_spider;wirlernenonline_spider;whitelist
+35272959-018f-4b09-bcc3-ae8d47ccd152;Grundschulkönig;https://www.grundschulkoenig.de/;grundschulkoenig_spider;grundschulkoenig_spider;whitelist
+163407ce-4ea0-4723-b407-ce4ea0c7232a;Handouts, Games und Links für Nachrichtenkompetenz;https://spreuweizen.de/material/;;;whitelist
+af974dee-d83e-46ea-82f1-c464bc68b538;Handwerk macht Schule;https://www.handwerk-macht-schule.de/;;;whitelist
+47d275dc-1b0d-4a1d-a3b8-e7f51798317b;Inklusives OER-Wörterbuch;https://redaktion.openeduhub.net/edu-sharing/components/render/47d275dc-1b0d-4a1d-a3b8-e7f51798317b;;;whitelist
+5fe544d1-07db-4083-b03c-90aa64b28b6a;JavaLab: Chemische Simulationen;https://javalab.org/en/category/chemistry_en/;;;whitelist
+3472e802-e6dc-4af0-9549-f9dd81eff8c3;Jugend hackt;https://jugendhackt.org/;;;whitelist
+d81ea43e-6f17-4664-9056-56a944e9494a;K. Dautels ZUM-Materialien | ZUM.de;https://www.zum.de/kdautel;wirlernenonline_spider;wirlernenonline_spider;whitelist
+f55ab84d-f271-4adb-8b83-2fecba5642e6;KI-Campus;https://ki-campus.org/;ki_campus_spider;ki_campus_spider;whitelist
+48a4555e-ef3e-42c8-8eb8-19909c006a39;KI-Campus | Die Lernplattform für Künstliche Intelligenz;https://ki-campus.org/;;;whitelist
+6153c196-4259-4b80-b7b6-092bc0563510;KMap;http://kmap.eu;kmap_spider;kmap_spider;whitelist
+cc40295f-45bc-4bf9-9a43-fbe015460c73;KindOERgarten.de;https://kindoergarten.wordpress.com/;kindoergarten_spider;kindoergarten_spider;whitelist
+38b9373c-8000-44ab-b62d-e58f63e48b8c;Kostenlose Downloads | Hamburger Puppentheater;https://redaktion.openeduhub.net/edu-sharing/components/render/38b9373c-8000-44ab-b62d-e58f63e48b8c;;;whitelist
+acbfb74a-295e-460b-be50-3c3d35396c39;Kostenlose Downloads | Hamburger Puppentheater;https://hamburgerpuppentheater.de/start/theater/fuer-lehrkraefte-paedagoginnen-multiplikatorinnen/kostenlose-downloads.html;;;whitelist
+a2cb2b79-8ead-4651-a73e-d3d4bac67392;LEIFIphysik;https://www.leifiphysik.de/;leifi_spider;leifi_spider;whitelist
+39c91cfa-5ea3-42e6-ab1b-1820c64623d0;Learning Snacks;https://www.learningsnacks.de;wirlernenonline_spider;wirlernenonline_spider;whitelist
+8fd9839f-835e-40ba-8dd1-395338259615;LearningApps.org;https://learningapps.org/;learning_apps_spider;learning_apps_spider;whitelist
+14e44974-d800-4a5e-adcc-d2a3dafaf510;LebensNaherChemieUnterricht (LNCU);http://www.lncu.de/;Lebensnaher Chemieunterricht (LNCU);;whitelist
+f324500c-c1d5-4f2e-a9c3-339231294e7a;Lehrer-Online;https://www.lehrer-online.de;lehreronline_spider;lehreronline_spider;whitelist
+087a76dc-7b4d-4275-9bf4-f84e665eeee2;Lernen lernen - ein Online-Portal von WirLernenOnline für alle;https://wirlernenonline.de/portal/lernen-lernen/;;;whitelist
+08809519-d0dc-4479-8e02-0b1b78b30a35;Lernroboter im Unterricht;https://www.uni-muenster.de/Lernroboter/video/index.shtml;wirlernenonline_spider;wirlernenonline_spider;whitelist
+207e1070-5ad2-4ef9-be10-705ad2cef936;MB Lernwelt;https://mblernwelt.de;;;whitelist
+a6db87df-9c1c-44e8-b9af-6259c03a4503;MINTdigital;https://www.mint-digital.de;;;whitelist
+c1b506ca-4215-4b16-bfb3-ee64e2f7eae3;MOOLs – Digitale Lehrerfortbildungsreihe - Teach Economy;https://www.teacheconomy.de/lehrvideos/;;;whitelist
+111fd317-ff8e-4136-9fd3-17ff8ee1360f;Material (OER) - kids.digilab.berlin;https://kids.digilab.berlin/material-oer/?utm_source=chatgpt.com;;;whitelist
+cf8d87d0-4e76-41ce-8d87-d04e7681ce58;"Material für Lehrerfortbildungen zu den Themenfeldern ""Pädagogische Herausforderungen"" und ""Digitale Souveränität""";https://librepro.de/lehrerfortbildung-material;;;whitelist
+22cdb0e8-f68d-4c74-a701-670d77402f44;Materialkompass | Verbraucherbildung.de;https://www.verbraucherbildung.de/materialkompass?search_api_fulltext=&field_main_topic%5B6797%5D=6797&field_main_topic%5B6799%5D=6799&field_grade_total%5B13%5D=13&field_grade_total%5B15%5D=15&page=#view-id-listing_materials;;;whitelist
+50681bf9-f541-4c94-95e9-6ccd15fe5297;Materialnetzwerk eG (MNWeG);https://mnweg.org/;wirlernenonline_spider;wirlernenonline_spider;whitelist
+05159d3a-645a-45f6-b852-d0c47c82349f;Materialsammlung Biochemie;https://www.lehrer-online.de/unterricht/sekundarstufen/naturwissenschaften/biologie/unterrichtseinheit/ue/materialsammlung-biochemie/;;;whitelist
+50c85759-35af-4fde-80f0-7690cd4e952f;Materialsammlung Physiologie und Anatomie;https://www.lehrer-online.de/unterricht/sekundarstufen/naturwissenschaften/biologie/unterrichtseinheit/ue/materialsammlung-physiologie-und-anatomie/;;;whitelist
+205674f8-69f2-4c88-8214-60970359a775;Media Smart;https://www.mediasmart.de/;wirlernenonline_spider;wirlernenonline_spider;whitelist
+a02fb76b-5ef7-47f8-afb7-6b5ef7c7f8d0;Medienbildung im Unterricht: Unterrichtsmaterial für alle Schularten;https://www.br.de/sogehtmedien/index.html;;;whitelist
+30a22438-f704-4312-8e48-1a0e995eca68;Medienportal der Siemens Stiftung;https://medienportal.siemens-stiftung.org/de/methoden;;;whitelist
+8a3da8cc-31b0-4f66-b9f8-006ce8d40143;Medienpädagogik der Vielfalt | Gesellschaft für Medienpädagogik und Kommunikationskultur (GMK) e.V.;https://medien-und-vielfalt.gmk-net.de/;wirlernenonline_spider;wirlernenonline_spider;whitelist
+e88119a5-3a87-4cfe-8b47-f7855513469b;MediothekPixiothek;https://www.schulportal-thueringen.de/media/start;mediothek_pixiothek_spider;mediothek_pixiothek_spider;whitelist
+d1546c0d-640a-4bd0-bfc9-bba65dd61798;MediothekPixiothek (2);https://www.schulportal-thueringen.de/media/start;mediothek_pixiothek_spider;mediothek_pixiothek_spider;whitelist
+62e75c13-75ee-4623-8b46-689cdd33e004;Memucho;https://memucho.de/;memucho_spider;memucho_spider;whitelist
+823d0970-8b80-4536-96d4-3be356131d38;Methodenblätter | Lehrerfortbildungsserver Baden-Württemberg;https://lehrerfortbildung-bw.de/st_if/bs/if/unterrichtsgestaltung/methodenblaetter/;;;whitelist
+c4ede21c-13cc-4439-bff6-a59fa7df209f;Methodenkartei – Unterrichtsmethoden von A bis Z (digital, kreativ, präsent, methodisch, praktisch,gut);https://www.methodenkartei.uni-oldenburg.de/;;;whitelist
+3185ac1a-1213-4694-a49b-2483292e5a2e;Methodenpool für zeitgemäßen Unterricht ;https://www.netzwerk-digitale-bildung.de/methodenpool/;;;whitelist
+4a762c76-7969-4c22-80d2-43494380c56d;NiBis (Niedersachsen Abi);https://za-aufgaben.nibis.de/;niedersachsen_abi_spider;niedersachsen_abi_spider;whitelist
+572b1dd5-044b-4cc7-9e53-29ae92af6433;OERSI - Open Educational Resources Search Index;https://oersi.org/resources/;OERSI;oersi_spider;whitelist
+c2b24133-b6cb-423e-b7b0-9c4882116323;OHRKA e.V.: Hörspiele, Lesungen und Reportagen für Kinder;https://redaktion.openeduhub.net/edu-sharing/components/render/c2b24133-b6cb-423e-b7b0-9c4882116323;;;whitelist
+c0571479-d1b3-44c3-a76a-6f850fb67385;Ohrka e.V.;https://www.ohrka.de/;;;whitelist
+990e1189-881a-417e-8864-340a1eb8d8ef;Ozobot - Roboterprogrammierung durch eingebaute Farb- und Helligkeitssensoren | TüftelLab digital;https://digital.tueftellab.de/mod/page/view.php?id=462%2F;;;whitelist
+8cf80ee1-6379-49f8-b3bb-92b9f3dbf89b;PhET-Simulationen;https://phet.colorado.edu/de/simulations/filter?subjects=chemistry&type=html&sort=alpha&view=grid;;;whitelist
+cb7bb5b0-b191-413c-be6c-0cfd716cb521;PhysikDigital.de;https://www.physikdigital.de;wirlernenonline_spider;wirlernenonline_spider;whitelist
+73a3e694-edd3-45c5-88c3-46c643280c2e;Physikaufgaben online;https://www.internet-abc.de/kinder/lernen-schule/hausaufgabenhelfer/linktipps-physik/;;;whitelist
+e18cf769-7427-465c-858c-43700999eee9;Planet Schule;https://www.planet-schule.de/;planet_schule_spider;planet_schule_spider;whitelist
+f07dff34-44f9-448f-8c81-bcb9e175c803;Planet Schule (3);https://www.planet-schule.de/;planet_schule_spider;planet_schule_spider;whitelist
+d09ef3d7-52ae-4a1b-94eb-68b6a38f0184;Planet Schule (falsch);https://www.planet-schule.de/;planet_schule_spider;planet_schule_spider;whitelist
+621496f8-af8b-4fab-b8cb-d42a4745cc12;Planet-N - nachhaltig<keit> lernen;https://www.planet-n.de/;;;whitelist
+d185b1f7-0f3e-4325-b42c-f30593196e7e;Planet-N – nachhaltig<keit> lernen;http://www.planet-n.de;planet_n_spider;planet_n_spider;whitelist
+d94ff942-1d9b-444c-b814-cb394274a2f3;Portal Globales Lernen;https://redaktion.openeduhub.net/edu-sharing/components/render/d94ff942-1d9b-444c-b814-cb394274a2f3;portal_globales_lernen_spider;portal_globales_lernen_spider;whitelist
+a55a5e66-becf-42e5-83b5-d4b6a210c7f0;Portal für organische Chemie: Namensreaktionen;https://www.organische-chemie.ch/OC/namensreaktionen.htm;;;whitelist
+9cc8074b-38a4-46d5-9d54-9eda7def9d02;Praxismaterialien – Forum Umweltbildung;https://www.umweltbildung.at/praxismaterial/;;;whitelist
+e03c1cb8-7b6b-4328-9e28-d4228cda411b;Praxismaterialien – Forum Umweltbildung;https://www.umweltbildung.at/praxismaterial/?_praxismaterial_categories=methode;;;whitelist
+52c97e43-cd35-4d21-aeab-6ceac6c746a6;Quizdidaktik;https://quizdidaktik.de/;quizdidaktik_spider;quizdidaktik_spider;whitelist
+d53fca65-1ca6-4fe0-aa6a-dea30d71aa72;SODIS – online content pool;https://sodis.de/cp/;wirlernenonline_spider;wirlernenonline_spider;whitelist
+7f987d08-6467-4a30-9384-516013b64cf5;Schlaukopf.de;https://www.schlaukopf.de/;wirlernenonline_spider;wirlernenonline_spider;whitelist
+ea7e4808-f02b-45c6-b0c5-400ca97cd92f;Schulcampus RLP;https://bildungsportal.rlp.de/dashboard;rlp_spider;rlp_spider;whitelist
+168c1b50-37b9-4904-a53c-eb1465b17081;Schule im Aufbruch;https://schule-im-aufbruch.de/;Schule im Aufbruch;;whitelist
+195e3d9f-011e-4b5e-a96e-e42905190926;Schule im Aufbruch;https://schule-im-aufbruch.de/;schule_im_aufbruch_spider;schule_im_aufbruch_spider;whitelist
+8bf7d708-0ef9-4ca3-a5d7-4e47668c1bbf;Science in School;http://www.scienceinschool.org/;wirlernenonline_spider;wirlernenonline_spider;whitelist
+a708b19f-6acd-4fdd-9d84-3d9f31b35376;Segu;https://segu-geschichte.de/;segu_spider;segu_spider;whitelist
+94b140fb-cef6-42bb-a2ef-3e9ae3b936b5;Serlo;https://de.serlo.org/;serlo_spider;serlo_spider;whitelist
+7346f4c2-a316-4f6a-86f4-c2a3160f6a23;Statista für Schulen - Wir machen Schüler fit für eine moderne Welt.;https://statista-fuer-schulen.de/;;;whitelist
+9d2dee15-5c86-4bb7-adee-155c860bb754;Studyflix;https://www.youtube.com/@studyflix;;;whitelist
+1182d09c-7171-402a-81e9-ed2b17f578c6;TEMI: Sammlung von Myterys;https://aeccc.univie.ac.at/lehrerinnen/unterrichtsmaterialien/temi/;;;whitelist
+a0eb73f6-921a-4255-8f46-b806d5d97443;TIB AV-Portal Chemie;https://av.tib.eu/search?f=subject%3Bhttp://av.tib.eu/resource/subject/Chemistry;;;whitelist
+059aa9d0-3b1c-4eff-812b-20f61e6b2b6b;TeachSam OER - Bildungsserver;http://teachsam.de;wirlernenonline_spider;wirlernenonline_spider;whitelist
+e60f6480-e3b4-444e-bfa9-566bbbb161e4;Teaching Tools für Lernziele und Lernkontrolle;https://teachingtools.uzh.ch/index.php?id=tools;;;whitelist
+6f8bc14d-4da7-4442-a388-9eb65673453b;Teaching the Sustainable Development Goals | Portal Globales Lernen;https://www.globaleslernen.de/de/suche?combine=Sustainable%20Development%20Goals;;;whitelist
+51f90008-3130-44c7-9473-d2595c157fce;The Royal Society of Chemistry;https://www.rsc.org/;;;whitelist
+d382bf28-39d3-4f6b-9d1c-b6e19fa0c2ee;Theater in der Schule;https://padlet.com/nickdoormann/theaterinderschule;;;whitelist
+c45d738c-ac1c-435f-807d-68f79076b7a2;Theater in der Schule;https://padlet.com/nickdoormann/theaterinderschule;;;whitelist
+2b994a61-0f47-4912-84c7-d5be835dbecf;Toolbox Lehrerbildung - Lehren und Lernen im digitalen Zeitalter | TUM;https://toolbox.edu.tum.de;wirlernenonline_spider;wirlernenonline_spider;whitelist
+3a707aba-6a2c-4e31-abe0-a4bd6bbfc1df;Tools des digital.learning.lab;https://digitallearninglab.de/tools?page=1&sorting=-latest;;;whitelist
+686f27d1-7835-4ed9-adda-e0c5ee347296;Tools für den Sprachunterricht; https://kits.blog/tools/;;;whitelist
+e6329b49-a3c5-4d45-84f4-c4246d61343f;Tutory;https://www.tutory.de/;tutory_spider;tutory_spider;whitelist
+ffc65f2f-fcf1-4054-bcdd-e7eb4e471bed;Umwelt im Unterricht;https://www.umwelt-im-unterricht.de/;Umwelt im Unterricht;;whitelist
+2651cf30-1338-4519-92a0-fca891a1cca3;Umwelt im Unterricht;https://www.umwelt-im-unterricht.de/;umwelt_im_unterricht_spider;umwelt_im_unterricht_spider;whitelist
+d1f7c9d2-8084-49bd-9022-de861f5abb1b;Unterrichtsmaterialien - fachverband-ethik.de;https://www.fachverband-ethik.de/aktuelles/landesverbaende/baden-wuerttemberg/unterrichtsmaterialien;;;whitelist
+9a48fba5-6e52-48eb-aec5-6ef3481eccc4;VCI Online - Verband der Chemischen Industrie e.V. (VCI);https://www.vci.de/startseite.jsp;;;whitelist
+4535ff98-a589-4a5f-8e81-2929fc0463d2;Videos zu klassischen Schulversuchen - BERGISCHE UNIVERSITÄT WUPPERTAL;https://chemiedidaktik.uni-wuppertal.de/index.php?id=5126&L=0;Bergische Universität Wuppertal;;whitelist
+65af7d96-9630-49bb-ad54-5630b77c7f45;Vision Kino – Netzwerk für Film- und Medienkompetenz;https://www.visionkino.de/;;;whitelist
+9f83c4f3-af75-4127-8d07-e556c01a84c9;WDC: Wale und Delfine;https://de.whales.org/wale-delfine/bildungsarbeit/;wirlernenonline_spider;wirlernenonline_spider;whitelist
+e6ede660-7234-4080-a7e2-9ad72c8c5d5d;Welt der Physik;https://www.weltderphysik.de/;wirlernenonline_spider;wirlernenonline_spider;whitelist
+01c2a8c6-267c-4a4d-8a61-1a10c3949e80;Werkzeugkoffer Making in der Schule;https://www.iqesonline.net/bildung-digital/unterrichtspraxis-erfahrungsberichte-lernumgebungen/werkzeugkoffer-making-in-der-schule/;;;whitelist
+fe1e0015-f031-4c36-9bb5-51ad0ee5fd1c;Wirlernenonline;https://www.wirlernenonline.de;wirlernenonline_spider;wirlernenonline_spider;whitelist
+822d9986-232c-4050-810f-54d8878db636;Wort.Schule;https://wort.schule;;;whitelist
+4bc267f1-9751-4b88-9585-7e5724584568;ZDF (RSS);https://www.zdf.de/;zdf_rss_spider;zdf_rss_spider;whitelist
+7869e4d9-dbc3-4fab-8b87-89edf711c3ef;ZUM Deutsch Lernen;https://deutsch-lernen.zum.de/wiki/Hauptseite;zum_deutschlernen_spider;zum_deutschlernen_spider;whitelist
+c68eaa36-12be-4889-a054-435633a14e8d;ZUM Deutsch Lernen - Plattform für DaF und DaZ | ZUM.de;https://deutsch-lernen.zum.de/wiki/Hauptseite;wirlernenonline_spider;wirlernenonline_spider;whitelist
+da96fcac-c6f4-4cc9-83ee-c24d47f2dccf;ZUM Klexikon;https://klexikon.zum.de/wiki/Kategorie:Wissensgebiete;zum_klexikon_spider;zum_klexikon_spider;whitelist
+99874634-8060-4dd0-a018-5d62b0ff04d1;ZUM Unterrichten;https://unterrichten.zum.de;zum_spider;zum_spider;whitelist
+d24713cf-ef78-41a7-90c6-03debff73955;ZUM-Apps;https://apps.zum.de/;wirlernenonline_spider;wirlernenonline_spider;whitelist
+80bd5688-c7df-4eb2-9f3c-f259d595af26;ZUM-DWU;https://dwu-unterrichtsmaterialien.de/;zum_dwu_spider;zum_dwu_spider;whitelist
+a528691f-10ca-4194-a2ed-c27e42659532;ZUM-Unterrichten | Fachportal Deutsch;https://unterrichten.zum.de/wiki/Deutsch;zum_spider;zum_spider;whitelist
+37c824d4-bca0-467b-a194-63e8518d217c;ZUM-Unterrichten | ZUM.de;https://unterrichten.zum.de;wirlernenonline_spider;wirlernenonline_spider;whitelist
+71642221-68e0-4d0d-91fe-0a352185f02f;ZUM: Mathe-Apps;http://www.zum.de/ma/fendt/mde/;zum_mathe_apps_spider;zum_mathe_apps_spider;whitelist
+d89f3778-d758-4870-b8e6-c28e6742e1f9;ZUM: Physik-Apps;https://www.walter-fendt.de/html5/phde/;wirlernenonline_spider;wirlernenonline_spider;whitelist
+5237b871-0f33-4a79-a693-d973ac29bf16;ZUM: Physik-Apps;https://www.walter-fendt.de/html5/phde/;zum_physik_apps_spider;zum_physik_apps_spider;whitelist
+923b037e-ad7e-415b-afc5-2948ad4f4e7d;Zebis;https://www.zebis.ch/;zebis_spider;zebis_spider;whitelist
+4859a3c1-0535-4834-a7a6-06142bfabc8c;Zeitgemäße Bildung | WirLernenOnline;https://wirlernenonline.de/portal/allgemein-zeitgemasse-methoden/;;;whitelist
+693f1be0-f866-4129-9fc8-5a2b5c85637f;Zeitschrift | MedienPädagogik;https://www.medienpaed.com/index;;;whitelist
+622fa36c-b81b-49e5-a770-25a1810f21b5;Zentralabitur Aufgaben Niedersachsen;https://za-aufgaben.nibis.de/;wirlernenonline_spider;wirlernenonline_spider;whitelist
+4679e5f2-6cc7-4880-bb4f-b9e694df5e9a;digiLL;https://digill.de/;wirlernenonline_spider;wirlernenonline_spider;whitelist
+0a5fd243-5479-4d0f-9a6d-976c6b327223;digital.learning.lab;https://digitallearninglab.de/tools?page=1&sorting=-latest;;;whitelist
+80bd5688-c7df-4eb2-9f3c-f259d595af26;dwu-Unterrichtsmaterialien: Physik und Mathematik;https://dwu-unterrichtsmaterialien.de;dwu_spider;dwu_spider;whitelist
+e61bb92a-2f37-402c-b1f9-50d1e996cc74;eBildungslabor | Impulse, Beratung und Unterstützung für gutes Lernen in einer Kultur der Digitalität von Nele Hirsch;https://ebildungslabor.de/;;;whitelist
+58c6ef3e-590f-439c-82f8-1c52cec1911a;iMooX;https://imoox.at/mooc/;wirlernenonline_spider;wirlernenonline_spider;whitelist
+b6c807a9-4e6e-4a1f-b802-fac016fecbf2;iRights;https://irights.info/;irights_spider;irights_spider;whitelist
+73d49437-5de8-4aae-b331-cbda8913730c;iRights (2);https://irights.info/;irights_spider;irights_spider;whitelist
+7cdb6c2c-4573-47d2-a816-4fd92de93b61;kids.digilab.berlin;https://redaktion.openeduhub.net/edu-sharing/components/render/7cdb6c2c-4573-47d2-a816-4fd92de93b61;;;whitelist
+f18ded7d-0b69-4122-9385-4cf64c1c6cf9;klassenarbeiten.de;https://www.klassenarbeiten.de/;wirlernenonline_spider;wirlernenonline_spider;whitelist
+b0b7aadc-adf8-40b0-b096-e98c63d0af00;rpi-virtuell;https://material.rpi-virtuell.de/;rpi_virtuell_spider;rpi_virtuell_spider;whitelist
+abc7640a-02bf-4fea-aa67-07fb8d6ab1db;so geht MEDIEN: Unterrichtsmaterial für alle Schularten;https://redaktion.openeduhub.net/edu-sharing/components/render/abc7640a-02bf-4fea-aa67-07fb8d6ab1db;;;whitelist
+b148e82f-a3e1-4217-9868-f5a894d91587;twillo - Lehre teilen;https://www.twillo.de/edu-sharing/components/collections?scope=EDU_ALL;;;whitelist
+85b91313-e807-4501-b4ac-d8edaad091e5;"Übersicht Musterverträge
+- IHK Frankfurt am Main";https://www.frankfurt-main.ihk.de/recht/mustervertraege/uebersicht;;;whitelist
+fc2698fa-80af-46d0-832a-73f7ad3c13ba;(KUDIVI  2) Grundlagen zur Digitalisierung: Mobile digitale Medien im Kunstunterricht;https://www.youtube.com/watch?v=9Np-d5deNQc;;;blacklist
+5cccf003-eafb-463d-82e1-434298e4be8b;(KUDIVI  2) Grundlagen zur Digitalisierung: Mobile digitale Medien im Kunstunterricht;https://www.youtube.com/watch?v=9Np-d5deNQc;;;blacklist
+b9bb9eeb-1328-4bec-9089-51d6edbf4b41;(KUDIVI 1) Potentiale mobiler digitaler Medien: Mobile digitale Medien im Kunstunterricht;https://www.youtube.com/watch?v=_chLtm-b5vw;;;blacklist
+1f8fbe53-0789-4d7e-88a2-d6281be15158;(KUDIVI 1) Potentiale mobiler digitaler Medien: Mobile digitale Medien im Kunstunterricht ;https://www.youtube.com/watch?v=_chLtm-b5vw;;;blacklist
+70fb8c3e-a7d4-4891-87c9-8fde0ad43beb;(KUDIVI 3) Kunstdidaktische Handlungsfelder: Mobile digitale Medien im Kunstunterricht;https://www.youtube.com/watch?v=AQn5uaK3GMo;;;blacklist
+51cff5d0-9398-4e67-af73-7af089fd3849;(KUDIVI 3) Kunstdidaktische Handlungsfelder: Mobile digitale Medien im Kunstunterricht ;https://www.youtube.com/watch?v=AQn5uaK3GMo;;;blacklist
+e02c9273-b6b4-45a8-ab44-4088e3e25197;American Sports anhand zweier amerikanischer Sportarten;https://www.twillo.de/edu-sharing/components/collections?scope=EDU_ALL&id=367a32df-6910-4032-b27a-cdac0c96c8d5;;;blacklist
+23615d18-bd15-49eb-a3c7-b57836b0c696;Bildwörterbuch Ukrainisch, Arabisch von Carlotta Klee und TüftelAkademie;https://tueftelakademie.de/fuer-zuhause/bilderwoerterbuch/;;;blacklist
+3d4ef0dd-34b2-40ac-b55b-001d66bacaf2;Bioethik - Medizinethik;https://www.4teachers.de/?action=show&id=6985;;;blacklist
+69aa4753-8c3d-49bc-b993-ae785a793520;CoSpaces Edu - Browserbasierte 3D-Software zur Gestaltung virtueller Welten | TüftelLab digital;https://digital.tueftellab.de/mod/page/view.php?id=464%2F;;;blacklist
+0019ac17-90a0-499b-a3e5-abf5cc4fa841;Coding & Robotics;https://www.kurse.kita.bayern/course/view.php?id=14#section-8;;;blacklist
+ab4aafbe-8c0a-4965-9966-8caf902f0e8c;Del 161 al 200 | Vocabulario ilustrado de los adjetivos | Del 121 al 160;https://www.profedeele.es/actividad/vocabulario/adjetivos-ilustrados-121-160/;;;blacklist
+82f8c314-96e1-49a2-8485-1bc83142b521;Digital und Binnendifferenziert: Das Potential digital gestufter Lernhilfen für den Biologieunterricht;https://imoox.at/course/DiBi;;;blacklist
+cb7da3d9-33db-4f25-9317-f9b7c8843a46;ESTAR + GERUNDIO | Erklärung und Übung;https://espanol.lingolia.com/de/grammatik/zeitformen/estar-gerundio;;;blacklist
+b694613b-2843-4769-81ee-2bebb649fb51;Eigenschaften von Alkohol (Ethanol);https://www.learningsnacks.de/#/welcome?userid=50100;;;blacklist
+e1d1fef5-94ce-4a91-bd90-363575c9f865;Einführung in die Theoretische Informatik;https://youtube.com/playlist?list=PLyAYXOZ2UwNypi5lCMgKx-bWUbpstnr1h;;;blacklist
+c06b5d2f-c48a-4f9b-b3a6-f6b7720eb291;Eingangstest Einführungsphase;https://www.schulentwicklung.nrw.de/sinus/front_content.php?idart=3198&matId=2479;;;blacklist
+8cf982ba-d2ed-4bf1-aae4-7e41bb59012c;Extra en español;https://www.planet-schule.de/sf/php/sendungen.php?sendung=6098;;;blacklist
+5cda1cff-716d-4e3a-b1cc-4fadbbc44ce6;Extra en español;https://www.planet-schule.de/sf/php/sendungen.php?sendung=10240;;;blacklist
+8c7d8271-a80c-4bb5-b985-e4a3d402dfe2;Extra en español | Folge 01: La Llegada de Sam;https://www.planet-schule.de/sf/php/sendungen.php?sendung=5900;planet_schule_spider;planet_schule_spider;blacklist
+5b5e7cbb-1c88-4a8e-ab4a-adb9a8ee8d70;Extra en español | Folge 02: Sam aprende a ligar;https://www.planet-schule.de/sf/php/sendungen.php?sendung=5902;planet_schule_spider;planet_schule_spider;blacklist
+c6910c50-0d9f-44fe-9df8-d55738875e0b;Extra en español | Folge 04: Ha nacido una estrella;https://www.planet-schule.de/sf/php/sendungen.php?sendung=5904;planet_schule_spider;planet_schule_spider;blacklist
+f57c2724-6fcd-4ad6-acf8-c7e9395e856e;Extra en español | Folge 05: El día de la Primitiva;https://www.planet-schule.de/sf/php/sendungen.php?sendung=5905;planet_schule_spider;planet_schule_spider;blacklist
+8f5e9617-b62d-4e96-b5cb-17db656b4d84;Extra en español | Folge 06: La gemela;https://www.planet-schule.de/sf/php/sendungen.php?sendung=5906;planet_schule_spider;planet_schule_spider;blacklist
+c2695152-6ccc-462d-8451-c3cfa44175f0;Extra en español | Folge 07: La prima de la dueña;https://www.planet-schule.de/sf/php/sendungen.php?sendung=5907;planet_schule_spider;planet_schule_spider;blacklist
+41589eae-b30a-4f39-bd96-27c6292516a6;Extra en español | Folge 08: Trabajos para los chicos;https://www.planet-schule.de/sf/php/sendungen.php?sendung=5908;planet_schule_spider;planet_schule_spider;blacklist
+253ebc75-59e1-469f-9744-b4f4756e0556;Extra en español | Folge 09: Ana protesta;https://www.planet-schule.de/sf/php/sendungen.php?sendung=5909;planet_schule_spider;planet_schule_spider;blacklist
+2d035308-9033-4282-b7d8-6611197c3cb1;Extra en español | Folge 10: Tiempo de vacaciones;https://www.planet-schule.de/sf/php/sendungen.php?sendung=5910;planet_schule_spider;planet_schule_spider;blacklist
+8202715d-65eb-482d-ab84-484d00950cb9;Extra en español | Folge 11: Fanáticos del fútbol;https://www.planet-schule.de/sf/php/sendungen.php?sendung=5911;planet_schule_spider;planet_schule_spider;blacklist
+9d1141c5-129b-45c6-ab53-9ac1d0ae4831;Extra en español | Folge 12: Boda en el aire;https://www.planet-schule.de/sf/php/sendungen.php?sendung=5912;planet_schule_spider;planet_schule_spider;blacklist
+0a90d14c-2805-49fc-9124-431025176fa4;Extra en español | Folge 13: Sam va de compras;https://www.planet-schule.de/sf/php/sendungen.php?sendung=5901;planet_schule_spider;planet_schule_spider;blacklist
+e0d021c4-cdf6-4cc5-a3d9-1abe40948b5a;Folge 09: Ana protesta | Extra en español | Folge 08: Trabajos para los chicos | Georg Büchner – Planet Schule  | Extra Deutsch — Hochzeitspläne | Bea;https://www.planet-schule.de/sf/php/sendungen.php?sendung=10287;;;blacklist
+8fb64856-8ebf-4878-b247-cb65e14543c2;Folge 10: Tiempo de vacaciones | Extra en español | Folge 11: Fanáticos del fútbol | Georg Büchner – Planet Schule  | Beat im Pott | Deutschland im Ka;https://www.planet-schule.de/sf/php/sendungen.php?sendung=11094;;;blacklist
+5d6edc9c-de10-4123-8aa1-c202ebab67d1;Folge 11: Fanáticos del fútbol;https://www.planet-schule.de/sf/php/sendungen.php?sendung=10870;;;blacklist
+04d21212-2abe-4726-add5-7cdb54189bc9;Fortbildungskurs 1: Basislektionen ;https://redaktion.openeduhub.net/edu-sharing/components/render/04d21212-2abe-4726-add5-7cdb54189bc9;;;blacklist
+9506f1f1-90be-424f-8eaf-151279e2e7cf;Fortbildungskurs Teil 2A: Aufbaumodul Kompetenzbereich Erkenntnisgewinnung;https://imoox.at/course/DiBi;;;blacklist
+88ce21a8-2a9e-4c6f-8e21-a82a9e3c6f16;Fortbildungskurs Teil 2B: Aufbaumodul Kompetenzbereich Kommunikation;https://imoox.at/course/DiBi;;;blacklist
+739c15a0-1872-425a-bdec-208f440bbaf5;Fortbildungskurs Teil 2C: Aufbaumodul Bewertung;https://imoox.at/course/DiBi;;;blacklist
+5ca1fd8f-a8ef-4dd0-a8de-89d7b02d2a26;Fotografieren und Bildbearbeitung;https://www.kurse.kita.bayern/course/view.php?id=14#section-4;;;blacklist
+31d9d693-9ede-497d-881c-9d078e559272;Geheimtinte mit Zitronensaft;https://chemiedidaktik.uni-wuppertal.de/index.php?id=5562&L=0;;;blacklist
+7e1ada55-ac46-4ed9-bf93-68009251db3c;Hauptgruppen im Periodensystem;https://www.123chemie.de/demo/;;;blacklist
+24d79b7c-9429-40a1-a5e1-389d3bea0121;Hürdenlauf (9./10. Klasse);https://www.twillo.de/edu-sharing/components/collections?scope=EDU_ALL&id=8de5fe0b-29bb-41f2-b6aa-1bbe3e1a3917;;;blacklist
+4360b79a-d99b-4bd3-ba54-f405cc948a2c;Israel und Palästina – Die Lage im Nahen Osten;https://bildungsmediathek-nrw.de/?newsid=4819&pid=42mkb8etfigf52aj3jk70ics76#ee905c11c9f49f4bd300bfe04f183ed8;;;blacklist
+90a0a450-31e8-4be8-ae8f-586a85a075c3;Jojo sucht das Glück;https://learngerman.dw.com/de/jojo-sucht-das-gl%C3%BCck/c-53437698;;;blacklist
+e7b8c766-5d93-42b3-9ddf-3ba7a06c4ed5;Jojo sucht das Glück | Staffel 1 ;https://learngerman.dw.com/de/jojo-sucht-das-gl%C3%BCck/c-53437698;;;blacklist
+463f19dd-6d87-4744-9bcb-b74800cf6c67;Kindgerechte Informationen zu dem Krieg in der Ukraine | Taskcards;https://www.taskcards.de/#/board/7dfbac05-a541-4908-87c5-7c387ca6312d/view;;;blacklist
+c78499ba-949c-4fb5-9740-5ffe10745793;Le Parkour;https://www.twillo.de/edu-sharing/components/collections?scope=EDU_ALL&id=9ca58fb4-8159-477b-ae1e-427f2caacbde;;;blacklist
+8aba69d6-d2ea-47ef-86e6-0463f0eb8c06;Lösungsvorgang eines Salzes;https://www.123chemie.de/demo/;;;blacklist
+43a61f1e-b252-4353-9a8d-a8467cc95b6d;Materialien zur Sicherheit im Chemieunterricht - Schulentwicklung NRW - SINUS;https://www.schulentwicklung.nrw.de/sinus/front_content.php?idart=1525&idcat=378&lang=9&client=12&matId=5858;;;blacklist
+c733153a-f4a0-4b5e-8001-cdd4e82441c2;Mathe ABITUR Analysis – Abi Aufgaben, Ableitung Abituraufgaben;https://www.youtube.com/watch?v=9KI87E60X74;;;blacklist
+d5732f4e-4c02-4cba-b173-446736828ea9;Mathe ABITUR Aufgaben - YouTube;https://www.youtube.com/watch?v=9KI87E60X74&list=PLF29x0idI4lWQm6moabn65cHSqhABxllU;Youtube;;blacklist
+bbcfff7f-0eff-492a-b244-a057b24a7a3d;Nachhaltiger Konsum und Globalisierung;https://redaktion.openeduhub.net/edu-sharing/components/render/bbcfff7f-0eff-492a-b244-a057b24a7a3d;;;blacklist
+220ec339-02b6-452b-b731-22371271d92e;Nachhaltiger Konsum und Globalisierung | Verbraucherbildung.de;https://www.verbraucherbildung.de/nachhaltiger-konsum-und-globalisierung;;;blacklist
+71610a6c-d30a-4005-aff2-eabeb532743f;"Nutzen statt besitzen – das Prinzip der ""Sharing Economy""";https://redaktion.openeduhub.net/edu-sharing/components/render/71610a6c-d30a-4005-aff2-eabeb532743f;;;blacklist
+c5e1e129-4c56-4389-ac50-2b073a50c99d;"Nutzen statt besitzen – das Prinzip der ""Sharing Economy""";https://www.umwelt-im-unterricht.de/hintergrund/nutzen-statt-besitzen-das-prinzip-der-sharing-economy/;;;blacklist
+c4a9ab8e-9442-486c-81b7-1d6cc47be60c;Oxidationszahlen;https://www.123chemie.de/demo/;;;blacklist
+e8fd3f27-7437-42dd-bd3f-27743752dda6;Playlist zur theoretischen Informatik;https://www.youtube.com/playlist?list=PLyAYXOZ2UwNypi5lCMgKx-bWUbpstnr1h;;;blacklist
+50467788-b544-4918-99cc-e3eb7ac2c1da;SER und ESTAR | Erklärung und Übung;https://espanol.lingolia.com/de/grammatik/verben/ser-estar;;;blacklist
+e688665b-970c-4b80-86a8-8eaf4f1eb121;SOUNDLAB - mit den Ohren sehen;https://www.twillo.de/edu-sharing/components/collections?id=e3c3139d-4570-402c-b7f4-bd4ce28272bc&viewType=1;;;blacklist
+67bc3089-7253-4891-9bb0-bcc9117ebe7d;Schreibvorlagen zu den > 50 Videos zur Alphabetisierung und Deutsch A1 - ALINA SONNENSCHEIN;https://drive.google.com/drive/folders/0B8pEQ5Hck9-0cENyYW1KcGpianc?resourcekey=0-lWWSNm2F9rWl2e082qfQwA&usp=sharing;;;blacklist
+3019a1a9-8adf-4c34-bb82-63ad7f01256c;Schulstart: Unsere Papierberge;https://www.umwelt-im-unterricht.de/wochenthemen/schulstart-unsere-papierberge/;;;blacklist
+13d53e5d-4910-4aad-b05a-a9f8ddceb53f;Schülerjobs ab 16 Jahre;https://www.youtube.com/@studyflix;;;blacklist
+058144f9-3253-400c-9788-9c3ad5768079;Selbst- und Fremdrettung;https://www.twillo.de/edu-sharing/components/collections?scope=EDU_ALL&id=59cfd2e7-e58c-43d4-a7e0-a9077e869a19;;;blacklist
+ecae17ed-cb22-40a8-8a1b-0a27e47da454;Service-Learning in den MINT-Fächern ;https://medienportal.siemens-stiftung.org/de/home;;;blacklist
+0d9678d6-4951-4664-b3d6-cc2daf334000;Sicherer Umgang mit der Ständer-Bohrmaschine im Werk- und Technik-Unterricht;https://www.werken-technik.de/Bohrmaschinenschein/lehrer.html;;;blacklist
+e87cccbe-4845-481b-8406-4e7314443e13;Sicherer Umgang mit der Ständer-Bohrmaschine im Werk- und Technik-Unterricht;https://www.werken-technik.de/Bohrmaschinenschein/lehrer.html;;;blacklist
+f1161d7b-5438-4667-85c6-2029ece9987a;Spezial: Wie Städte grüner werden;https://www.umwelt-im-unterricht.de/wochenthemen/spezial-wie-staedte-gruener-werden/;;;blacklist
+fa892cf0-6a62-4c55-9aed-196bd847804a;Spiekeroog Transekt - Zeigerpflanzen und Bodeneigenschaften von Biotopen der Ostfriesischen Inseln;https://www.twillo.de/edu-sharing/components/collections?id=4df8cce9-d689-49de-b1e7-da6fb3e3209b&viewType=1;;;blacklist
+b0308711-508f-4bb4-9a5b-2e80a1a3b182;Staffel 1, 2 und 3 | learngerman.dw.com | Jojo sucht das Glück | Staffel 3 -> doppelt = löschen!;https://learngerman.dw.com/de/jojo-sucht-das-gl%C3%BCck/c-53437698;;;blacklist
+411e0cfb-f0b9-4def-9e0c-fbf0b92defbf;Teil 0: Hintergrundinformationen (Digital & Binnendifferenziert);https://imoox.at/course/DiBi;;;blacklist
+c5c4c4ff-f9d3-4384-b000-5582d24f9c6f;Tenses;https://unterrichten.zum.de/wiki/Tenses;;;blacklist
+037bd7b1-e683-4135-a6e2-5f3c358170da;Tenses – ZUM-Unterrichten;https://unterrichten.zum.de/wiki/Tenses;;;blacklist
+76e30c01-33af-4be5-9d9d-d4caff9b0f47;Texte zusammenfassen - TaskCards;https://www.taskcards.de/#/dashboards/a21f4c3d-000d-43d3-8150-d85162370264;;;blacklist
+54aa39c0-8258-4a2b-a272-a021ff8166dc;Tonleiter und Tonart;https://openmusic.academy/docs/msP3AYzpXZRQ4si4Gs45Xr/musik-tonleiter-tonart;;;blacklist
+f70d4e13-9f75-4681-af44-dd790b5c8933;Unsere Papierberge;https://www.umwelt-im-unterricht.de/wochenthemen/schulstart-unsere-papierberge/;;;blacklist
+7361843e-39cd-460f-af5a-a9e2cc59c659;Unterrichtsvorhaben zu Trennverfahren;https://www.schulentwicklung.nrw.de/sinus/front_content.php?idart=1495&idcat=378&lang=9&client=12&matId=5859;;;blacklist
+0b53cace-b4ad-4410-93ca-ceb4ad741090;Urheberrecht im Internet - Was ist erlaubt?;https://rechtecheck.de/urheberrecht-im-internet-was-ist-erlaubt/?utm_source=chatgpt.com;;;blacklist
+5ab3630b-184a-4aa5-b363-0b184a3aa57e;Urheberrecht im Internet - Was ist erlaubt? - RECHTECHECK.DE;https://rechtecheck.de/urheberrecht-im-internet-was-ist-erlaubt/?utm_source=chatgpt.com;;;blacklist
+53947376-7912-4683-87a7-7c98c1c1093a;Urlaub: entspannt und nachhaltig!;https://www.umwelt-im-unterricht.de/wochenthemen/urlaub-entspannt-und-nachhaltig/;;;blacklist
+0af3151f-baf9-4745-b66b-e5bbe6b91175;Urlaub: entspannt und nachhaltig!;https://www.umwelt-im-unterricht.de/wochenthemen/urlaub-entspannt-und-nachhaltig/;;;blacklist
+95bbe376-ef5e-4178-aa4c-931f300bebdd;Urlaub: entspannt und nachhaltig! | umwelt-im-unterricht.de;https://www.umwelt-im-unterricht.de/wochenthemen/urlaub-entspannt-und-nachhaltig/;;;blacklist
+3f9013fd-a053-43ff-adf8-ffbf935a8d83;Vocabulario ilustrado de los adjetivos | Del 1 al 40;https://redaktion.openeduhub.net/edu-sharing/components/render/3f9013fd-a053-43ff-adf8-ffbf935a8d83;;;blacklist
+e1a1113f-a3b9-4879-9c60-2a3cd41dbf5a;Vocabulario ilustrado de los adjetivos | Del 161 al 200;https://www.profedeele.es/actividad/vocabulario/adjetivos-ilustrados-161-200/;;;blacklist
+9d4394d4-8431-4156-aa35-51723e42ba6e;Vocabulario ilustrado de los adjetivos | Del 81 al 120;https://www.profedeele.es/actividad/vocabulario/adjetivos-ilustrados-81-120/;;;blacklist
+1c9fb893-8b62-4a35-bf75-f50a6defe7c2;Wie Städte grüner werden;https://www.umwelt-im-unterricht.de/wochenthemen/spezial-wie-staedte-gruener-werden/;;;blacklist
+f8280a0e-09d0-4a8f-8676-488c8e41e471;Wirtschaftliches Handeln im privaten Haushalt - Bildungsmediathek NRW - Medien für Schule und Bildung;https://www.bildungsmediathek-nrw.de/?pid=q91j08nfqa376l138qh8936393#cd964c6cf578eb2fcdaef556cb0f6469;;;blacklist
+ac11df9e-2224-4401-9adc-f82c9fa68f4b;Wirtschaftliches Handeln im privaten Haushalt - Bildungsmediathek NRW - Medien für Schule und Bildung;http://www.edmond-nrw.de;;;blacklist
+786cb20e-eef9-49b1-bc05-6053483551f3;Zusammensetzung der Luft;https://www.123chemie.de/demo/;;;blacklist
+5d009597-0132-4393-99c5-f16bb14d8436;pH-Wert;https://www.123chemie.de/demo/;oai_sodis_spider;oai_sodis_spider;blacklist
+4fe88ca2-ff26-46f6-a261-5466019e36fe; Wale und Delfine als Thema in der Schule ;https://de.whales.org/wale-delfine/bildungsarbeit/;;;blacklist
+ca4941f1-a734-4902-8bc2-3d6a26f80bbe;123 Chemie: Lernprogramme;http://www.123chemie.de/demo/#;;;blacklist
+ccddd4bc-cd50-4371-baa9-42ec07db3719;123Chemie - Das Chemieregal;https://www.123chemie.de/demo/;;;blacklist
+6520b868-f2b9-4abd-94c8-98e9a6c357ad;17 Ziele für Nachhaltige Entwicklung - Agenda 2030 der UN;https://17ziele.de/;;;blacklist
+58953eaf-9c22-4b22-9a57-69526b6d5cb7;BERUFENET - Berufsinformationen einfach finden;"https://berufenet.arbeitsagentur.de/berufenet/faces/index;BERUFENETJSESSIONID=pYyGhb3t0IeJ_LVziJ1NeaEyw7gHLH3WezHM5v2Tk25Zi6aDKJHP!-1962399804?path=null/kurzbeschreibung&dkz=93996";;;blacklist
+bddcd004-778e-4799-8a40-b55ac05bf874;Bau und Fall der Berliner Mauer;https://www.chronik-der-mauer.de/;;;blacklist
+6e612a13-32a8-4f6c-80a6-1847534ea34f;Bildungsansatz – FREI DAY;https://frei-day.org/;;;blacklist
+7da3cccf-5ea2-448a-8dd2-e7fe29899316;Bildungsmaterialien | Greenpeace;https://www.greenpeace.de/bildungsmaterialien;;;blacklist
+55982fd6-dd4c-4fb8-ab03-707756ec2b7d;CCC | Chaos macht Schule;https://www.ccc.de/schule;;;blacklist
+b397065f-f73f-4157-bac8-7054669f3d63;Chemie interaktiv - Animationen für den Chemieunterricht;https://chemie-interaktiv.net/;;;blacklist
+30abc9cd-8517-44bf-82ca-8832585cc7b2;Climate Change: Vital Signs of the Planet;https://climate.nasa.gov/resources/education/;;;blacklist
+cb0d9545-013d-4931-beff-f730cc9fc9e2;CrypTool.org Portal;https://www.cryptool.org/;;;blacklist
+ddc821ce-ed52-4683-8821-ceed52e683af;Decision Coaching - Patient Decision Aids - Ottawa Hospital Research Institute;https://decisionaid.ohri.ca/coaching.html;;;blacklist
+a8b61a03-5b79-4be5-b78b-f42937e1a97b;EDMOND NRW - Medien für Schule und Bildung;https://www.bildungsmediathek-nrw.de/?pid=q91j08nfqa376l138qh8936393;;;blacklist
+d704c8ac-a344-4cd6-be07-4465ccb13de3;Erinnerungsorte für die Opfer des Nationalsozialismus;https://www.bpb.de/themen/holocaust/erinnerungsorte/;;;blacklist
+fb99e8fe-ed83-43cc-a7e8-55a414ab82cb;Erklärvideos | Portal Globales Lernen;https://www.globaleslernen.de/de/bildungsmaterialien/multimedia-angebote-fuer-globales-lernen/videoclips;;;blacklist
+49ff2fb1-db62-4f98-bcb7-238a80cddd65;Faszination Chemie: Startseite;https://faszinationchemie.de/;;;blacklist
+fca62b30-ab5c-49b5-adde-5b584ade099d;Handwerk macht Schule: Schulbank trifft Werkbank;https://www.handwerk-macht-schule.de/;;;blacklist
+d4535cec-c35c-43dd-9abe-ffb02b8d2665;Hauptseite;https://deutsch-lernen.zum.de/wiki/Hauptseite;;;blacklist
+c0c2a73d-5195-4729-94b4-9f1b4421b146;Homepage – Science in School;https://www.scienceinschool.org/;;;blacklist
+bae5a88c-c1bc-4ba8-a784-5b316fa0deb6;Jugend hackt;https://jugendhackt.org/;;;blacklist
+46069c23-571c-45e6-9ee9-63e34af2bc30;K. Dautels ZUM-Materialien | ZUM.de;http://www.zum.de/kdautel/;;;blacklist
+1c0541d7-f667-4dec-9d73-287a6372421d;KI-Campus;https://ki-campus.org/#block-kic-theme-kicfrontpageabout;;;blacklist
+10d8ed1c-23c6-49ec-8365-f83ff8e95c0c;Klassenarbeiten.de - Kostenlose Klassenarbeiten und Übungen;https://www.klassenarbeiten.de/;;;blacklist
+3d258600-2e41-4108-bbc4-c6a0ffb3874c;LebensNaherChemieUnterricht (lcnu);http://www.lncu.de/;;;blacklist
+e9da5fe3-6417-4c44-981c-c3a9711f3afd;Lernen lernen | Wir lernen online;https://wirlernenonline.de/portal/lernen-lernen/;;;blacklist
+0011cc1b-0203-4c5f-a6e6-269ad164ee54;Lernroboter im Unterricht -  Lehr- und Unterrichtsmaterial;https://www.uni-muenster.de/Lernroboter/video/index.shtml;;;blacklist
+c77dc64f-34fa-4822-ad72-a7630f039bdd;Linktipps: Physik | Internet-ABC;https://www.internet-abc.de/kinder/lernen-schule/hausaufgabenhelfer/linktipps-physik/;;;blacklist
+d824b152-e733-4ab9-a4b1-52e7333ab907;MATERIAL - spreuweizen.de;https://spreuweizen.de/material/;;;blacklist
+3335e9c0-e394-4fd0-a3e0-2c031b2840da;MB Nachhilfe;http://www.mbnachhilfe.de;;;blacklist
+e5e095ac-274c-4efd-a025-64c2977e8da5;MINTdigital;https://www.mint-digital.de/;;;blacklist
+7dfd6e74-6205-4002-8c4b-bcff442ecd1f;"MOOC ""Startchance kita.digital""";https://www.kurse.kita.bayern/course/view.php?id=14;;;blacklist
+f15a31da-7e5a-4975-b426-5588f6046ef5;"MOOC ""Startchance kita.digital""";https://www.kurse.kita.bayern/course/view.php?id=14;;;blacklist
+c2be35e0-c4f0-4cc6-97bc-874b42b7b5de;MOOLs – Digitale Lehrerfortbildungsreihe - Teach Economy;https://www.teacheconomy.de/lehrvideos/;;;blacklist
+82bf9762-0347-4cdb-903f-703b895cfe2f;Materialsammlung Biochemie;https://www.lehrer-online.de/unterricht/sekundarstufen/naturwissenschaften/biologie/unterrichtseinheit/ue/materialsammlung-biochemie/;;;blacklist
+62ca8fd0-47f1-4c6b-870a-284f74f470a9;Materialsammlung Physiologie und Anatomie;https://www.lehrer-online.de/unterricht/sekundarstufen/naturwissenschaften/biologie/unterrichtseinheit/ue/materialsammlung-physiologie-und-anatomie/;;;blacklist
+068322f9-3134-42a6-846a-5185931acce4;Media Smart;https://www.mediasmart.de/;;;blacklist
+3e7f6bb6-d154-496e-bf3e-59c29171bff5;MedienPädagogik: Zeitschrift für Theorie und Praxis der Medienbildung;https://www.medienpaed.com/index;;;blacklist
+e6984eb8-f972-4389-9783-1c42cdeb20dc;Medienportal der Siemens Stiftung | Suchergebnis | Medienportal der Siemens Stiftung;https://medienportal.siemens-stiftung.org/portal/main.php?todo=metadata_search&searcharea=portal&crits%5Bmedialang%5D=de&options%5BsearchAndOr%5D=1&crits%5Bfree%5D=klimawandel;;;blacklist
+4c2ea8f6-306d-4869-a151-0a8fb08eab28;Medienportal der Siemens-Stiftung;https://medienportal.siemens-stiftung.org/de/home;;;blacklist
+a780f77b-f7b3-448b-89c9-2249fbf8b21d;Medienportal für den MINT-Unterricht;https://medienportal.siemens-stiftung.org/de/home;;;blacklist
+e77937f7-667a-437e-9967-ec0d9f227182;Medienpädagogik der Vielfalt;https://medien-und-vielfalt.gmk-net.de/;;;blacklist
+9ca3174c-76ce-4092-9ab2-6140d1d77b1a;Methodenblätter;https://lehrerfortbildung-bw.de/st_if/bs/if/unterrichtsgestaltung/methodenblaetter/;;;blacklist
+92633321-72aa-4854-8677-0ae4c09eb48d;Methodenkartei | Universität Oldenburg;https://www.methodenkartei.uni-oldenburg.de/;;;blacklist
+d0d775aa-ee31-4094-b3b7-ee0f94a671ce;Methodenpool;https://www.netzwerk-digitale-bildung.de/methodenpool/;;;blacklist
+e466f985-2cf2-4dca-8d0d-05bb6c53659c;Mundo | Offene Bildungsmediathek der Länder | FWU;https://mundo.schule/;;;blacklist
+ac44e0ca-2d2d-4c16-9b02-5d0fe654ad41;Namensreaktionen;https://www.organische-chemie.ch/OC/namensreaktionen.htm;;;blacklist
+bec7d1a1-cab0-41b2-ab18-cf790b465c11;NeDiChe;https://chemiedidaktik.uni-wuppertal.de/index.php?id=5502;;;blacklist
+7d06129d-1614-4566-b25a-d9b9cb785cb0;NeDiChe - Netzwerk Digitale Chemie - Didaktik der Chemie - UNI WUPPERTAL;https://chemiedidaktik.uni-wuppertal.de/index.php?id=5502;;;blacklist
+ceb51d60-455a-407a-9321-6469dc448442;Netzwerk Digitale Bildung | METHODENPOOL – Netzwerk Digitale Bildung;https://www.netzwerk-digitale-bildung.de/methodenpool/;;;blacklist
+1c5a40ce-4c91-46cf-908e-cc93e9d9dac7;OER - finden. erstellen. teilen.;https://mnweg.org/;;;blacklist
+d6eab038-db16-48c9-a13c-302212689673;Open Music Academy;https://openmusic.academy/docs/msP3AYzpXZRQ4si4Gs45Xr/musik-tonleiter-tonart;;;blacklist
+d6dca09f-a6f3-405d-a032-b956e17fee83;PhET - Eine Plattform für interaktives Lernen mit Simulationen aus den Bereichen Mathematik und Wissenschaft.;https://phet.colorado.edu/de/simulations/filter?subjects=math&type=html&sort=alpha&view=grid;;;blacklist
+20754d27-ac37-437f-8943-b04a1b04091a;Portal Globales Lernen;https://www.globaleslernen.de/de/suche?combine=&field_media_types_target_id%5B%5D=2636&field_school_subjects_target_id%5B%5D=2688;;;blacklist
+dcddb099-489a-4fa4-a181-9a6267532aeb;Schlaukopf;https://www.schlaukopf.de/#google_vignette;;;blacklist
+0662f382-9132-4e38-a326-a2f8abd18384;Schlaukopf;https://www.schlaukopf.de/;;;blacklist
+89605160-707c-45a4-bd4f-5dd619227051;Schriftliche Abituraufgaben Niedersachsen;https://za-aufgaben.nibis.de/;;;blacklist
+eaa9fbc4-eba2-4887-9f30-65e14a6b31cf;Schule im Aufbruch;https://schule-im-aufbruch.de/;;;blacklist
+4e7a47a7-dec3-4e57-9719-f89f2b8ec656;Schule im Aufbruch;https://schule-im-aufbruch.de/;;;blacklist
+f9e858e9-6dc2-4e8b-b28d-78cb40910653;Schulentwicklung NRW - SINUS - Zur Materialdatenbank - Naturwissenschaften - Startseite;https://www.schulentwicklung.nrw.de/sinus/front_content.php?idart=15407&matId=5864;;;blacklist
+5ea5eee2-5436-4a42-bfa7-ac69cf712063;Statista für Schulen;https://statista-fuer-schulen.de/?utm_source=Statista%20PR&utm_campaign=a464464c14-20200924_GCS_Sparen_DE_COPY_01&utm_medium=email&utm_term=0_4271fcfa45-a464464c14-304203749;;;blacklist
+9f7d7288-b37e-4cf1-9e30-dd8b7d4d5161;Suchergebnis;https://medienportal.siemens-stiftung.org/portal/main.php?todo=metadata_search&searcharea=portal&crits%5Bmedialang%5D=de&options%5BsearchAndOr%5D=1&crits%5Bfree%5D=nachhaltigkeit;;;blacklist
+6649176a-3168-49e2-bc3e-49afe3d71a5b;TEMI-Materialien;https://aeccc.univie.ac.at/lehrerinnen/unterrichtsmaterialien/temi/;;;blacklist
+cfb0170f-eb1e-4018-a797-c12f7d1da464;TIB AV-Portal | Biologie und Biowissenschaften;https://av.tib.eu/search?f=subject%3Bhttp%3A%2F%2Fav.tib.eu%2Fresource%2Fsubject%2FLife_Sciences;;;blacklist
+d4a11a72-7a21-416b-9621-c0a3b3820ef6;TaskCards;https://www.taskcards.de/#/home/start;;;blacklist
+541e6eab-ec0b-4cf0-a9ca-b8758f07a048;Teaching the Sustainable Development Goals | Portal Globales Lernen | Portal Globales Lernen;https://www.globaleslernen.de/de/suche?combine=&field_media_types_target_id%5B%5D=2636&field_school_subjects_target_id%5B%5D=2683;;;blacklist
+9666f359-e3a9-44bb-8e1b-6fe2dab4108a;The Royal Society of Chemistry;https://www.rsc.org/;;;blacklist
+6def1094-0e3f-4d5c-8c10-97ec85d304ce;Tool;https://teachingtools.uzh.ch/index.php?id=tool&toolId=54;;;blacklist
+c9f9a4a2-6594-47b6-9820-5c1d210d76f6;Toolbox Lehrerbildung - Lehren und Lernen im digitalen Zeitalter;https://redaktion.openeduhub.net/edu-sharing/components/render/c9f9a4a2-6594-47b6-9820-5c1d210d76f6;;;blacklist
+60d5df32-bebd-473d-b7e1-0a4502fdc9ec;Toolbox Lehrerbildung. Lehren und Lernen im digitalen Zeitalter;https://toolbox.edu.tum.de/;;;blacklist
+7d2f2917-958e-4e91-9df0-b4fb8816975f;Umwelt im Unterricht;http://www.umwelt-im-unterricht.de/;;;blacklist
+369ff1de-731b-4cf7-961a-e609c7103334;Unterrichtsideen;https://medienkompetenzrahmen.nrw/unterrichtsmaterialien/;;;blacklist
+b97b4212-a4c4-4af1-8e68-20635c5353e3;Unterrichtsmaterial - Fond der Chemischen Industrie e.V. (FCI);https://www.vci.de/fonds/schulpartnerschaft/unterrichtsmaterialien/seiten.jsp;;;blacklist
+3a568791-c1b8-43a5-848f-408140e46ade;Unterrichtsmaterialien - fachverband-ethik.de;https://www.fachverband-ethik.de/aktuelles/landesverbaende/baden-wuerttemberg/unterrichtsmaterialien;;;blacklist
+6bfd4856-e040-4629-800c-2093122e7528;VCI Online - Verband der Chemischen Industrie e.V. (VCI);https://www.vci.de/startseite.jsp;;;blacklist
+205cf781-3c28-496d-8e0f-46eccf3cc506;Verbraucherbildung | Nachhaltigkeit;https://www.verbraucherbildung.de/materialkompass?search_api_fulltext=&field_main_topic[6799]=6799&page=#view-id-listing_materials;;;blacklist
+9201d477-e8d7-4038-a87f-34730d9ccdf0;Vision Kino – Netzwerk für Film- und Medienkompetenz;https://www.visionkino.de/;;;blacklist
+a223b24a-a0ef-4fbc-a772-e06028ca736c;Walter Fendt - Apps zur Physik;https://www.walter-fendt.de/html5/phde/;;;blacklist
+c7aaf894-3c70-40bc-9dfa-9b071ca88ef7;Welt der Physik;https://www.weltderphysik.de/;;;blacklist
+1333299d-21e1-4e99-8c2e-81e0c1a85fe2;Werkzeugkoffer «Making in der Schule» – IQES;https://www.iqesonline.net/bildung-digital/unterrichtspraxis-erfahrungsberichte-lernumgebungen/werkzeugkoffer-making-in-der-schule/;;;blacklist
+6a961640-140c-4fb1-b3b7-2fa6e44cce6c;WirLernenOnline – Deutsch Digital;https://deutsch-digital.eu/?page_id=533;;;blacklist
+7654e9a1-dab6-4345-9aa0-e59c74b0b7aa;ZUM Deutsch Lernen;https://deutsch-lernen.zum.de/wiki/Hauptseite;;;blacklist
+542b2014-68f9-49e8-bf88-2d29f1652593;ZUM-Apps | ZUM.de;https://apps.zum.de/;ZUM-Apps;;whitelist
+085ab90e-e498-4b63-9025-d75176bd36ff;ZUM-Unterrichten | Deutsch;https://unterrichten.zum.de/wiki/Deutsch;;;blacklist
+1a348b3e-c9b9-42d6-bf1b-aa2891d80584;Zeitgemäße Bildung | Wir lernen online;https://wirlernenonline.de/portal/allgemein-zeitgemasse-methoden/;;;blacklist
+557fb059-47de-43e5-a7aa-8ca39c6b4c4b;Ziele für Nachhaltige Entwicklung - Agenda 2030 der UN;https://17ziele.de/;;;blacklist
+6e11999d-df59-4f2f-8272-2296f071b8a7;digiLL;https://digill.de;;;blacklist
+294339e4-9652-43df-b651-7bbcd536c55e;eBildungslabor - Unterstützung für zeitgemäße Bildung;https://ebildungslabor.de/;;;blacklist
+0ffa64d4-2917-4429-b23e-16b7af1d62cf;edulabs.de: Unterrichtsideen für zeitgemäße Bildung;https://www.edulabs.de/oer/;;;blacklist
+7666d42a-28b5-4a3a-a6d4-2a28b57a3ae9;iMooX | iMooX;https://imoox.at/mooc/;;;blacklist
+3ee706f0-9c8a-4bfd-bc28-33853be8179a;kitS - Tools für Sprachbildung & mehr;https://kits.blog/tools/;;;blacklist
+e7fbf58f-3870-46d9-874a-eca266e63d5d;physikdigital.de;https://www.physikdigital.de/;;;blacklist
+d88265ab-f46f-4c07-8265-abf46f8c07be;teachSam;https://teachsam.de/;;;blacklist
+99eea09f-9a1d-4116-9d9d-04a9676197ed;"Übersicht Musterverträge
+- IHK Frankfurt am Main";https://www.frankfurt-main.ihk.de/recht/mustervertraege/uebersicht;;;blacklist
+e047d240-944b-4e25-87d2-40944b2e2513;Bayerischer Rundfunk: Nachrichten von BR24, Highlights aus der BR Mediathek, Live Radio hören und BR.de-Specials - die Startseite für Bayern | BR.de;;Bayerischer Rundfunk;;whitelist
+c148cd83-98c2-4b00-88cd-8398c2fb00ff;OER Commons;;OER Commons;;whitelist
+c4d2838c-a9f9-4cf0-9283-8ca9f9ccf04a;ComeIn – Communities of Practice NRW für eine Innovative Lehrerbildung;;ComeIn;;whitelist
+7abe4a93-58f3-4029-be4a-9358f380290b;Deutsche Welle - Kostenlos online Deutsch lernen;;Deutsche Welle;;whitelist
+b490865f-e0d5-4252-9086-5fe0d5c2528b;Youtube;;Youtube;;whitelist
+dbbb71f0-d7a5-439b-8508-660a9b1166f3;Schubert, Franz: Übungen zur Liedanalyse (1);;OERSI;;blacklist
+168c1b50-37b9-4904-a53c-eb1465b17081;Schule im Aufbruch;;Schule im Aufbruch;;whitelist
+26c33c74-d35a-4eb9-833c-74d35a4eb96c;Coding for Tomorrow;;Coding for Tomorrow;;whitelist
+9a4a4b80-97a9-4b39-9c9b-66712dcff6cb;Ecole Science bei YouTube;;Ecole Science;;whitelist
+

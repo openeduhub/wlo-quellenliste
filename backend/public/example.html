@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WLO Quellenverzeichnis – Einbettungs-Beispiel</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f0f2f5;
+      color: #1a1a2e;
+      padding: 24px;
+    }
+    header {
+      max-width: 1200px;
+      margin: 0 auto 24px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    header p {
+      color: #666;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+    .demo-container {
+      max-width: 1200px;
+      margin: 0 auto 32px;
+    }
+    .code-block {
+      max-width: 1200px;
+      margin: 0 auto 24px;
+      background: #1e1e2e;
+      color: #cdd6f4;
+      border-radius: 8px;
+      padding: 20px 24px;
+      font-family: 'Fira Code', 'Consolas', monospace;
+      font-size: 13px;
+      line-height: 1.6;
+      overflow-x: auto;
+      white-space: pre;
+    }
+    .code-block .tag   { color: #89b4fa; }
+    .code-block .attr  { color: #a6e3a1; }
+    .code-block .val   { color: #fab387; }
+    .code-block .cmt   { color: #6c7086; font-style: italic; }
+    .section-title {
+      max-width: 1200px;
+      margin: 32px auto 12px;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    footer {
+      max-width: 1200px;
+      margin: 40px auto 0;
+      padding-top: 16px;
+      border-top: 1px solid #ddd;
+      text-align: center;
+      color: #999;
+      font-size: 0.8rem;
+    }
+    footer a { color: #003b7c; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>WLO Quellenverzeichnis – Web Component</h1>
+    <p>
+      Diese Seite demonstriert die Einbettung der <code>&lt;wlo-sources&gt;</code> Webkomponente.<br>
+      Die Komponente lädt Daten von der API und zeigt das vollständige Quellenverzeichnis.
+    </p>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- Einbettungs-Beispiel: Minimal                                     -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+
+  <div class="section-title">1. Minimale Einbettung</div>
+
+  <div class="code-block"><span class="cmt">&lt;!-- Polyfills + Haupt-Bundle laden --&gt;</span>
+<span class="tag">&lt;script</span> <span class="attr">src</span>=<span class="val">"https://wlo-quellenliste-api.vercel.app/wc/polyfills.js"</span><span class="tag">&gt;&lt;/script&gt;</span>
+<span class="tag">&lt;script</span> <span class="attr">src</span>=<span class="val">"https://wlo-quellenliste-api.vercel.app/wc/main.js"</span><span class="tag">&gt;&lt;/script&gt;</span>
+<span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="val">"stylesheet"</span> <span class="attr">href</span>=<span class="val">"https://wlo-quellenliste-api.vercel.app/wc/styles.css"</span><span class="tag">&gt;</span>
+
+<span class="cmt">&lt;!-- Webkomponente einbetten --&gt;</span>
+<span class="tag">&lt;wlo-sources</span> <span class="attr">api-base</span>=<span class="val">"https://wlo-quellenliste-api.vercel.app"</span><span class="tag">&gt;&lt;/wlo-sources&gt;</span></div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- Einbettungs-Beispiel: Mit Konfiguration                           -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+
+  <div class="section-title">2. Mit Konfiguration (API-Base, Ansicht, Farben, Min-Count)</div>
+
+  <div class="code-block"><span class="tag">&lt;wlo-sources</span>
+  <span class="attr">api-base</span>=<span class="val">"https://wlo-quellenliste-api.vercel.app"</span>   <span class="cmt">&lt;!-- API-URL (leer = gleicher Origin) --&gt;</span>
+  <span class="attr">view</span>=<span class="val">"tile"</span>                              <span class="cmt">&lt;!-- Startansicht: tile | list | stats --&gt;</span>
+  <span class="attr">min-count</span>=<span class="val">"5"</span>                            <span class="cmt">&lt;!-- Nur Quellen mit mind. 5 Inhalten --&gt;</span>
+  <span class="attr">primary-color</span>=<span class="val">"#003b7c"</span>                  <span class="cmt">&lt;!-- Hauptfarbe --&gt;</span>
+  <span class="attr">accent-color</span>=<span class="val">"#f97316"</span>                   <span class="cmt">&lt;!-- Akzentfarbe --&gt;</span>
+  <span class="attr">bg-color</span>=<span class="val">"#f4f7fc"</span>                       <span class="cmt">&lt;!-- Hintergrund --&gt;</span>
+<span class="tag">&gt;&lt;/wlo-sources&gt;</span></div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- Live-Demo                                                          -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+
+  <div class="section-title">3. Live-Demo</div>
+
+  <div class="demo-container">
+    <wlo-sources id="live-demo" min-count="5" view="tile"></wlo-sources>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- Attribut-Referenz                                                  -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+
+  <div class="section-title">Attribut-Referenz</div>
+
+  <div class="code-block"><span class="cmt">Attribut          Typ      Default       Beschreibung</span>
+<span class="cmt">───────────────── ──────── ───────────── ──────────────────────────────────</span>
+<span class="attr">api-base</span>          string   <span class="val">""</span>            API-URL (leer = gleicher Origin)
+<span class="attr">view</span>              string   <span class="val">"tile"</span>        Startansicht: tile | list | stats
+<span class="attr">min-count</span>         number   <span class="val">5</span>             Nur Quellen mit mind. N Inhalten
+<span class="attr">primary-color</span>     color    <span class="val">#003b7c</span>       Hauptfarbe (Header, Badges)
+<span class="attr">secondary-color</span>   color    <span class="val">#002d5f</span>       Sekundärfarbe
+<span class="attr">accent-color</span>      color    <span class="val">#f97316</span>       Akzentfarbe (Highlights)
+<span class="attr">bg-color</span>          color    <span class="val">#f4f7fc</span>       Hintergrundfarbe
+<span class="attr">card-bg</span>           color    <span class="val">#ffffff</span>       Kartenfarbe
+<span class="attr">text-color</span>        color    <span class="val">#12213a</span>       Textfarbe</div>
+
+  <footer>
+    <p>
+      WLO Quellenverzeichnis API · 
+      <a href="/docs" target="_blank">API-Dokumentation (Swagger)</a> · 
+      <a href="/wc/main.js">main.js (~291 kB)</a>
+    </p>
+  </footer>
+
+  <!-- Web Component laden (relative Pfade → funktioniert lokal + Vercel) -->
+  <script src="/wc/runtime.js?v=1c7cdc14"></script>
+  <script src="/wc/polyfills.js?v=1c7cdc14"></script>
+  <script src="/wc/main.js?v=1c7cdc14"></script>
+  <link rel="stylesheet" href="/wc/styles.css?v=1c7cdc14">
+  <script>
+    // api-base automatisch auf aktuellen Origin setzen
+    document.getElementById('live-demo').setAttribute('api-base', window.location.origin);
+  </script>
+</body>
+</html>
