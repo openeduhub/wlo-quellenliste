@@ -105,6 +105,33 @@ curl -X POST http://localhost:8080/jobs/refresh
 
 Der Job ruft die WLO edu-sharing API ab, führt die Daten mit der Korrekturliste zusammen und berechnet Statistiken neu.
 
+### 4. API-Key-Schutz (optional)
+
+Schreibende Endpoints (`POST /jobs/refresh`, `POST /correction-list`) können
+über die Umgebungsvariable `WLO_API_KEY` geschützt werden:
+
+```bash
+# Linux/macOS
+export WLO_API_KEY="mein-geheimer-schluessel"
+
+# Windows PowerShell
+$env:WLO_API_KEY = "mein-geheimer-schluessel"
+
+# Docker
+docker run -p 8080:8080 -e WLO_API_KEY="mein-geheimer-schluessel" wlo-quellenliste
+```
+
+Den Key als `X-API-Key`-Header oder `?api_key=…` Query-Parameter mitgeben:
+
+```bash
+curl -X POST -H "X-API-Key: mein-geheimer-schluessel" http://localhost:8080/jobs/refresh
+```
+
+> Ist `WLO_API_KEY` nicht gesetzt, sind alle Endpoints frei zugänglich.
+> Lesende Endpoints (GET) sind immer öffentlich.
+
+Für Vercel: In *Settings → Environment Variables* die Variable `WLO_API_KEY` anlegen.
+
 ---
 
 ## Webkomponente entwickeln und integrieren
@@ -156,7 +183,7 @@ Die Build-Konfiguration steht in `webcomponent/angular.json`:
 
 | Methode | Pfad | Beschreibung |
 |---------|------|-------------|
-| `POST` | `/jobs/refresh` | Neuen Daten-Refresh starten |
+| `POST` | `/jobs/refresh` | Neuen Daten-Refresh starten ¹ |
 | `GET` | `/jobs` | Letzte Jobs auflisten |
 | `GET` | `/jobs/latest` | Status des letzten Jobs |
 | `GET` | `/jobs/{job_id}` | Status eines bestimmten Jobs |
@@ -177,8 +204,10 @@ Die Build-Konfiguration steht in `webcomponent/angular.json`:
 | Methode | Pfad | Beschreibung |
 |---------|------|-------------|
 | `GET` | `/correction-list` | Aktuelle Korrekturtabelle herunterladen |
-| `POST` | `/correction-list` | Neue Korrekturtabelle hochladen (CSV) |
+| `POST` | `/correction-list` | Neue Korrekturtabelle hochladen (CSV) ¹ |
 | `GET` | `/correction-list/template` | Leere CSV-Vorlage |
+
+> ¹ Geschützt durch `WLO_API_KEY` (wenn gesetzt). Siehe [API-Key-Schutz](#4-api-key-schutz-optional).
 
 ### Webkomponente
 

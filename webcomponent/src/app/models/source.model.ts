@@ -14,6 +14,7 @@ export interface SourceRecord {
   matchConfidence?: string;
   isPrimary?: boolean;
   qualityFlags?: string[];
+  editorialStatus?: string;  // Quellenerschließungsstatus (0-9)
   // Basis-Qualitätsfelder (Slim-View Icons)
   loginRaw?: string;
   adsRaw?: string;
@@ -235,4 +236,67 @@ export function parseQuality(r: SourceRecord): {
                  : r.gdprRaw?.includes('/noGeneralDataProtectionRegulation') ? false : null,
     oer:           r.oer === true,
   };
+}
+
+// ---------------------------------------------------------------------------
+// Editorial Status (Quellenerschließungsstatus 0-9)
+// ---------------------------------------------------------------------------
+
+/**
+ * Parst den editorialStatus String zu einer Zahl 0-9.
+ * Erwartet Format wie "9" oder "9. In Suche aufgenommen, Tool wird angeschlossen"
+ * Gibt null zurück wenn kein Status vorhanden.
+ */
+export function parseEditorialStatus(status: string | null | undefined): number | null {
+  if (!status || status.trim() === '') return null;
+  const match = status.trim().match(/^(\d)/);
+  return match ? parseInt(match[1], 10) : null;
+}
+
+/** Gibt die Farbe für einen Status-Wert zurück (immer grün, 0/null=grau) */
+export function editorialStatusColor(status: number | null): string {
+  if (status === null || status === 0) return '#9ca3af'; // gray-400
+  return '#22c55e'; // green-500
+}
+
+/** Gibt die CSS-Klasse für den Status zurück */
+export function editorialStatusClass(status: number | null): string {
+  if (status === null || status === 0) return 'es-unk';
+  if (status <= 2) return 'es-bad';
+  if (status <= 4) return 'es-med';
+  if (status <= 6) return 'es-ok';
+  return 'es-good';
+}
+
+/**
+ * Gibt die beste verfügbare Absprung-URL für einen Record zurück:
+ * 1. wwwUrl (Originalseite)
+ * 2. WLO Render-Link (nodeId)
+ * 3. WLO-Suche nach publisher_combined (Fallback)
+ */
+export function launchUrl(r: SourceRecord): string {
+  if (r.wwwUrl) return r.wwwUrl;
+  if (r.nodeId) return `https://redaktion.openeduhub.net/edu-sharing/components/render/${r.nodeId}`;
+  const bq = r.name || r.title || '';
+  if (!bq) return '';
+  const filters = JSON.stringify({ 'ccm:oeh_publisher_combined': [bq] });
+  return `https://redaktion.openeduhub.net/edu-sharing/components/search?filters=${encodeURIComponent(filters)}`;
+}
+
+/** Label für den Status */
+export function editorialStatusLabel(status: number | null): string {
+  if (status === null) return 'Keine Angabe';
+  const labels: Record<number, string> = {
+    0: 'Keine Angabe',
+    1: 'Nicht erschlossen',
+    2: 'In Suche aufgenommen',
+    3: 'Metadaten angereichert',
+    4: 'Qualität geprüft',
+    5: 'Redaktionell überarbeitet',
+    6: 'Vollständig erschlossen',
+    7: 'Hervorragend erschlossen',
+    8: 'Exzellent erschlossen',
+    9: 'Vollständig redaktionell',
+  };
+  return labels[status] ?? `Status ${status}`;
 }

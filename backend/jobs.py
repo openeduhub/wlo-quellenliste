@@ -280,10 +280,29 @@ def _run_job(job: Job) -> None:
                        f"{node_dups} API-Artefakt-Dubletten entfernt "
                        f"({len(quellen_deduped)} verbleibend)")
 
-        # ── Stufe 3b: Korrekturen laden + anreichern ────────────────────────
+        # ── Stufe 3b: Korrekturen laden + Blacklist vorab abziehen ─────────
         corrections_raw = load_corrections()
-        # Nur Whitelist-Einträge mit Node-Id benötigen Metadaten-Abruf;
-        # Blacklist-Einträge werden beim Merge vollständig entfernt
+
+        # Blacklist-NodeIds sofort extrahieren und Quelldatensätze filtern,
+        # BEVOR teure Whitelist-Metadaten abgerufen oder der Merge läuft.
+        bl_nodes = {
+            (r.get("Node-Id") or "").strip()
+            for r in corrections_raw
+            if str(r.get("Liste") or "").strip().lower() == "blacklist"
+            and (r.get("Node-Id") or "").strip()
+        }
+        if bl_nodes:
+            before = len(quellen_deduped)
+            quellen_deduped = [
+                r for r in quellen_deduped
+                if (r.get("nodeId") or "").strip() not in bl_nodes
+            ]
+            bl_removed_early = before - len(quellen_deduped)
+            if bl_removed_early:
+                log.info("Blacklist (vorab): %d Records entfernt (%d verbleibend)",
+                         bl_removed_early, len(quellen_deduped))
+
+        # Nur Whitelist-Einträge mit Node-Id benötigen Metadaten-Abruf
         whitelist_with_id = [
             r for r in corrections_raw
             if (r.get("Node-Id") or "").strip()
@@ -300,14 +319,9 @@ def _run_job(job: Job) -> None:
         job.update("merging", "Führe Daten zusammen …")
         merged_raw, blacklist_removed = merger.merge(quellen_deduped, facets, corrections)
 
-        # ── Stufe 3d: Metadaten-Anreicherung für Top-Facets-only ────────
-        job.update("enriching", "Reichere Top-Quellen mit Metadaten an …")
-        fetcher.enrich_facets_only(
-            merged_raw, min_count=5, max_enrich=500,
-            progress_cb=lambda done, total: job.update(
-                "enriching", f"Metadaten: {done}/{total} …"
-            ),
-        )
+        # ── Stufe 3d: (entfernt – Enrichment von Content-Nodes für Facets-only
+        #     war fehlerhaft: Metadaten einzelner Inhalte sind nicht repräsentativ
+        #     für eine Bezugsquelle. Nur Quelldatensatz-Metadaten sind zulässig.)
 
         # ── Stufe 3e: Primär-Markierung (alle Records behalten) ──────────
         job.update("merging", "Primär-Markierung läuft …")
@@ -330,7 +344,7 @@ def _run_job(job: Job) -> None:
             "withNodeId":               report["withNodeId"],
             "facetsOnly":               report["facetsOnly"],
             "nodeDuplicatesRemoved":    node_dups,
-            "blacklistRemoved":         blacklist_removed,
+            "blacklistRemoved":         (bl_removed_early if bl_nodes else 0) + blacklist_removed,
             "matchReport":              report,
             "generated":                _now(),
         }

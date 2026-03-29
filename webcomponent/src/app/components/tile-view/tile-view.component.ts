@@ -1,6 +1,6 @@
 import { Component, inject, AfterViewInit, OnDestroy, ElementRef, computed, signal, viewChild } from '@angular/core';
 import { DecimalPipe } from '@angular/common';
-import { SourceRecord, qScore, qCls } from '../../models/source.model';
+import { SourceRecord, qScore, qCls, parseEditorialStatus, editorialStatusColor, editorialStatusLabel, launchUrl as modelLaunchUrl } from '../../models/source.model';
 import { SourceService } from '../../services/source.service';
 
 @Component({
@@ -23,6 +23,12 @@ import { SourceService } from '../../services/source.service';
             <div class="overlay-badges">
               @if (r.oer) { <span class="ov-badge oer">OER</span> }
               @if (r.isSpider) { <span class="ov-badge crawler">⚙ Crawler</span> }
+            </div>
+            <!-- Top-right: Editorial Status (Akku) -->
+            <div class="es-overlay" [title]="esTooltip(r)">
+              @for (i of [1,2,3,4,5,6,7,8,9]; track i) {
+                <span class="es-bar" [class.filled]="i <= esValue(r)" [style.background-color]="i <= esValue(r) ? esColor(r) : ''"></span>
+              }
             </div>
             <!-- Bottom-left: grouped sub-sources badge -->
             @if (bqCount(r) > 1) {
@@ -76,7 +82,14 @@ import { SourceService } from '../../services/source.service';
             }
           </div>
 
-          <!-- Quality footer: 6 Indikatoren -->
+          <!-- Launch icon bottom-right of tile -->
+          @if (launchUrl(r)) {
+            <a class="tile-launch" [href]="launchUrl(r)" target="_blank" rel="noopener" [title]="r.wwwUrl ? 'Originalseite öffnen' : 'In WLO suchen'" (click)="$event.stopPropagation()">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+            </a>
+          }
+
+          <!-- Quality footer: 6 Indikatoren + Editorial Status -->
           <div class="quality-row">
 
             <!-- 1. Login -->
@@ -167,7 +180,7 @@ import { SourceService } from '../../services/source.service';
       border: 1.5px solid var(--wsl-border, #e2e8f0);
       border-radius: 14px; overflow: hidden; cursor: pointer;
       transition: transform .18s, box-shadow .18s, border-color .18s;
-      display: flex; flex-direction: column;
+      display: flex; flex-direction: column; position: relative;
     }
     .tile:hover {
       transform: translateY(-3px);
@@ -215,6 +228,17 @@ import { SourceService } from '../../services/source.service';
       position: absolute; bottom: 8px; right: 10px; z-index: 1;
       display: flex; flex-direction: column; align-items: flex-end;
     }
+    .tile-launch {
+      position: absolute; bottom: 6px; right: 6px; z-index: 3;
+      width: 28px; height: 28px; border-radius: 7px;
+      background: transparent; color: var(--wsl-text-muted, #94a3b8);
+      display: flex; align-items: center; justify-content: center;
+      border: none;
+      transition: color .15s, background .15s;
+      text-decoration: none;
+    }
+    .tile-launch svg { width: 14px; height: 14px; }
+    .tile-launch:hover { color: #fff; background: var(--wsl-primary, #003b7c); }
     .co-num   { font-size: 22px; font-weight: 900; color: #fff; line-height: 1; text-shadow: 0 1px 6px rgba(0,0,0,.7); }
     .co-label { font-size: 9px; color: rgba(255,255,255,.9); font-weight: 700; letter-spacing: .6px; text-transform: uppercase; text-shadow: 0 1px 4px rgba(0,0,0,.6); }
 
@@ -257,6 +281,20 @@ import { SourceService } from '../../services/source.service';
     .qi-med { background: #fef3c7; color: #92400e; }
     .qi-off { background: #fee2e2; color: #991b1b; }
     .qi-unk { background: var(--wsl-bg, #f1f5f9); color: #cbd5e1; }
+
+    /* Editorial Status (Akku) – rechts oben auf der Kachel */
+    .es-overlay {
+      position: absolute; top: 8px; right: 8px; z-index: 2;
+      display: flex; gap: 1.5px; align-items: center;
+      padding: 3px 5px; border-radius: 5px;
+      background: rgba(0,0,0,.45); backdrop-filter: blur(4px);
+      cursor: help;
+    }
+    .es-bar {
+      width: 3.5px; height: 11px; border-radius: 1px;
+      background: rgba(255,255,255,.3); flex-shrink: 0;
+    }
+    .es-bar.filled { border-radius: 1px; }
 
     .lic-tag {
       font-size: 9px; padding: 2px 5px; border-radius: 4px; font-weight: 700; margin-left: 2px;
@@ -426,5 +464,25 @@ export class TileViewComponent implements AfterViewInit, OnDestroy {
     if (l === 'CC_0' || l === 'CC0' || l.startsWith('CC_BY') || l === 'COPYRIGHT_FREE') return 'lic-tag oer-lic';
     if (l.startsWith('CC')) return 'lic-tag cc';
     return 'lic-tag copy';
+  }
+
+  launchUrl(r: SourceRecord): string {
+    return modelLaunchUrl(r);
+  }
+
+  // Editorial Status helpers
+  esValue(r: SourceRecord): number {
+    return parseEditorialStatus(r.editorialStatus) ?? 0;
+  }
+
+  esColor(r: SourceRecord): string {
+    return editorialStatusColor(this.esValue(r));
+  }
+
+  esTooltip(r: SourceRecord): string {
+    const val = this.esValue(r);
+    const label = editorialStatusLabel(val);
+    const full = r.editorialStatus ?? '';
+    return `${label}${full ? ' – ' + full : ''}`;
   }
 }

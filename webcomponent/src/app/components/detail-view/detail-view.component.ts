@@ -2,7 +2,7 @@ import { Component, computed, inject, OnInit, signal } from '@angular/core';
 import { DecimalPipe } from '@angular/common';
 import { SourceService } from '../../services/source.service';
 import { ApiService, WloNode } from '../../services/api.service';
-import { SourceRecord, qScore, qCls, qDisplayValue } from '../../models/source.model';
+import { SourceRecord, qScore, qCls, qDisplayValue, parseEditorialStatus, editorialStatusColor, editorialStatusLabel, launchUrl as modelLaunchUrl } from '../../models/source.model';
 
 /** Hilfsfunktion: gibt die CSS-Klasse für eine qi-card zurück */
 function cardCls(raw: string | null | undefined, invert = false, zeroGood = false): string {
@@ -37,16 +37,26 @@ function cardCls(raw: string | null | undefined, invert = false, zeroGood = fals
               @if (r().isSpider) { <span class="badge spider-badge">Crawler</span> }
               @if (r().license)  { <span class="badge lic-badge">{{ r().license }}</span> }
             </div>
-            @if (r().wwwUrl) {
-              <a class="header-url" [href]="r().wwwUrl" target="_blank" rel="noopener">
+            @if (launchUrl()) {
+              <a class="header-url" [href]="launchUrl()" target="_blank" rel="noopener">
                 <svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M8 1.5C6 4 5.5 6 5.5 8s.5 4 2.5 6.5M8 1.5C10 4 10.5 6 10.5 8s-.5 4-2.5 6.5M1.5 8h13" stroke="currentColor" stroke-width="1" fill="none"/></svg>
-                {{ r().wwwUrl }}
+                {{ r().wwwUrl || 'In WLO suchen' }}
               </a>
+            }
+            @if (r().editorialStatus) {
+              <div class="editorial-status">
+                <div class="es-battery">
+                  @for (i of [1,2,3,4,5,6,7,8,9]; track i) {
+                    <span class="es-bar" [class.filled]="i <= esValue()" [style.background-color]="i <= esValue() ? esColor() : ''"></span>
+                  }
+                </div>
+                <span class="es-text">{{ r().editorialStatus }}</span>
+              </div>
             }
           </div>
           <div class="header-actions">
             @if (launchUrl()) {
-              <a class="launch-btn" [href]="launchUrl()" target="_blank" rel="noopener" [title]="r().wwwUrl ? 'Originalseite öffnen' : 'In WLO öffnen'">
+              <a class="launch-btn" [href]="launchUrl()" target="_blank" rel="noopener" [title]="r().wwwUrl ? 'Originalseite öffnen' : 'In WLO suchen'">
                 <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
               </a>
             }
@@ -422,6 +432,19 @@ function cardCls(raw: string | null | undefined, invert = false, zeroGood = fals
     .header-url svg { width: 12px; height: 12px; flex-shrink: 0; }
     .header-url:hover { text-decoration: underline; }
     .header-actions { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+
+    /* Editorial Status */
+    .editorial-status {
+      display: flex; align-items: center; gap: 8px;
+      margin-top: 8px; padding: 6px 10px;
+      background: var(--wsl-bg, #f0f4ff); border-radius: 8px;
+      margin-left: 0; margin-right: auto;
+    }
+    .es-battery { display: flex; gap: 2px; align-items: center; }
+    .es-bar { width: 5px; height: 14px; border-radius: 1px; background: #e2e8f0; flex-shrink: 0; }
+    .es-bar.filled { border-radius: 1px; }
+    .es-text { font-size: 12px; color: var(--wsl-text, #0f172a); font-weight: 500; }
+
     .launch-btn {
       width: 36px; height: 36px; border-radius: 10px;
       background: var(--wsl-primary, #003b7c); color: #fff;
@@ -632,11 +655,8 @@ export class DetailViewComponent implements OnInit {
     return (this.src.selectedSource()?.name || '?').charAt(0).toUpperCase();
   }
 
-  launchUrl(): string | null {
-    const rec = this.r();
-    if (rec.wwwUrl) return rec.wwwUrl;
-    if (rec.nodeId) return `https://redaktion.openeduhub.net/edu-sharing/components/render/${rec.nodeId}`;
-    return null;
+  launchUrl(): string {
+    return modelLaunchUrl(this.r());
   }
 
   // ─── Helpers ───────────────────────────────────────────────────────────
@@ -739,5 +759,14 @@ export class DetailViewComponent implements OnInit {
     if ((e.target as HTMLElement).classList.contains('overlay')) {
       this.src.closeDetail();
     }
+  }
+
+  // Editorial Status helpers
+  esValue(): number {
+    return parseEditorialStatus(this.r().editorialStatus) ?? 0;
+  }
+
+  esColor(): string {
+    return editorialStatusColor(this.esValue());
   }
 }

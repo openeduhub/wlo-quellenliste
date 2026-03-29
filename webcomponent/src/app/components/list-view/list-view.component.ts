@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { DecimalPipe } from '@angular/common';
-import { SourceRecord, qScore, qCls } from '../../models/source.model';
+import { SourceRecord, qScore, qCls, parseEditorialStatus, editorialStatusColor, editorialStatusLabel, launchUrl as modelLaunchUrl } from '../../models/source.model';
 import { SourceService } from '../../services/source.service';
 
 /** Tooltip-Text für einen Qualitätsscore */
@@ -38,10 +38,11 @@ function scoreTooltip(label: string, raw: string | null | undefined, lbl: string
             </th>
             <th class="col-subj">Fach</th>
             <th class="col-edu">Bildungsstufe</th>
-            <th class="col-lrt">Inhaltstyp</th>
             <th class="col-type">Typ</th>
             <th class="col-oer">OER</th>
+            <th class="col-es">Erschließung</th>
             <th class="col-qi">Qualität</th>
+            <th class="col-launch"></th>
           </tr>
         </thead>
         <tbody>
@@ -82,11 +83,6 @@ function scoreTooltip(label: string, raw: string | null | undefined, lbl: string
                   <span class="edu-tag">{{ l }}</span>
                 }
               </td>
-              <td class="col-lrt">
-                @for (t of (r.oehLrt ?? []).slice(0, 2); track t) {
-                  <span class="lrt-tag">{{ t }}</span>
-                }
-              </td>
               <td class="col-type">
                 @if (r.isSpider) {
                   <span class="type-tag spider">Crawler</span>
@@ -94,6 +90,17 @@ function scoreTooltip(label: string, raw: string | null | undefined, lbl: string
               </td>
               <td class="col-oer">
                 @if (r.oer) { <span class="badge oer-badge">OER</span> }
+              </td>
+
+              <!-- Editorial Status (Akku-Anzeige) -->
+              <td class="col-es">
+                @if (r.editorialStatus) {
+                  <div class="es-battery" [title]="esTooltip(r)">
+                    @for (i of [1,2,3,4,5,6,7,8,9]; track i) {
+                      <span class="es-bar" [class.filled]="i <= esValue(r)" [style.background-color]="i <= esValue(r) ? esColor(r) : ''"></span>
+                    }
+                  </div>
+                }
               </td>
 
               <!-- 7 Qualitätsindikatoren -->
@@ -154,6 +161,15 @@ function scoreTooltip(label: string, raw: string | null | undefined, lbl: string
 
                 </div>
               </td>
+
+              <!-- Absprung-Button -->
+              <td class="col-launch">
+                @if (launchUrl(r)) {
+                  <a class="launch-sm" [href]="launchUrl(r)" target="_blank" rel="noopener" [title]="r.wwwUrl ? 'Originalseite öffnen' : 'In WLO suchen'" (click)="$event.stopPropagation()">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+                  </a>
+                }
+              </td>
             </tr>
           }
         </tbody>
@@ -204,7 +220,9 @@ function scoreTooltip(label: string, raw: string | null | undefined, lbl: string
     .col-type   { width: 76px; }
     .col-lrt    { width: 120px; }
     .col-oer    { width: 54px; }
+    .col-es     { width: 72px; }
     .col-qi     { width: 142px; }
+    .col-launch  { width: 36px; text-align: center; }
 
     .avatar { width: 90px; height: 45px; border-radius: 6px; object-fit: cover; display: block; }
     .avatar-init {
@@ -262,6 +280,17 @@ function scoreTooltip(label: string, raw: string | null | undefined, lbl: string
     .qi-off { background: #fee2e2; color: #991b1b; }
     .qi-unk { background: #f1f5f9; color: #94a3b8; }
 
+    /* Editorial Status (Akku) */
+    .es-battery {
+      display: flex; gap: 2px; align-items: center; height: 18px;
+      cursor: help;
+    }
+    .es-bar {
+      width: 5px; height: 12px; border-radius: 1px;
+      background: #e2e8f0; flex-shrink: 0;
+    }
+    .es-bar.filled { border-radius: 1px; }
+
     .load-more-row { text-align: center; padding: 16px; }
     .load-more-btn {
       padding: 10px 28px; background: var(--wsl-primary, #003b7c);
@@ -269,6 +298,16 @@ function scoreTooltip(label: string, raw: string | null | undefined, lbl: string
       font-size: 13px; cursor: pointer;
     }
     .load-more-btn:disabled { opacity: .6; cursor: default; }
+
+    /* Absprung-Button */
+    .launch-sm {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 26px; height: 26px; border-radius: 6px;
+      color: #94a3b8; background: transparent;
+      transition: color .15s, background .15s;
+    }
+    .launch-sm:hover { color: #2563eb; background: #eff6ff; }
+    .launch-sm svg { width: 14px; height: 14px; }
   `],
 })
 export class ListViewComponent {
@@ -372,5 +411,25 @@ export class ListViewComponent {
   sortArrow(field: string): string {
     if (this.src.sort() !== field) return '↕';
     return this.src.order() === 'desc' ? '↓' : '↑';
+  }
+
+  launchUrl(r: SourceRecord): string {
+    return modelLaunchUrl(r);
+  }
+
+  // Editorial Status helpers
+  esValue(r: SourceRecord): number {
+    return parseEditorialStatus(r.editorialStatus) ?? 0;
+  }
+
+  esColor(r: SourceRecord): string {
+    return editorialStatusColor(this.esValue(r));
+  }
+
+  esTooltip(r: SourceRecord): string {
+    const val = this.esValue(r);
+    const label = editorialStatusLabel(val);
+    const full = r.editorialStatus ?? '';
+    return `${label}${full ? ' – ' + full : ''}`;
   }
 }

@@ -32,7 +32,7 @@ LRT_QUELLE = (
     "2e678af3-1026-4171-b88e-3b3a915d1673"
 )
 
-BATCH_SIZE   = 100
+BATCH_SIZE   = 500
 FACET_LIMIT  = 100_000
 REQUEST_TIMEOUT = 30
 PAUSE_S      = 0.05   # Pause zwischen Batch-Anfragen
@@ -148,6 +148,7 @@ def extract_record(node: dict) -> dict:
         # Erschließung
         "isSpider":          is_spider,
         "replicationSource": repl,
+        "editorialStatus":   _get(p, "ccm:editorial_checklist_DISPLAYNAME"),
         # Sprache / Keywords
         "language":          _get(p, "cclom:general_language_DISPLAYNAME") or _get(p, "cclom:general_language"),
         "keywords":          " | ".join(_getA(p, "cclom:general_keyword")[:10]),
@@ -260,6 +261,8 @@ def fetch_quellen(
             f"&maxItems={BATCH_SIZE}"
             f"&skipCount={skip}"
             f"&propertyFilter=-all-"
+            f"&sortProperties=sys%3Anode-uuid"
+            f"&sortAscending=true"
         )
         body = {
             "criteria": [
@@ -443,6 +446,7 @@ def enrich_facets_only(
                 "qInterop", "qInteropLbl", "qAdvertisement", "qAdvertisementLbl",
                 "qUsability", "qUsabilityLbl", "qSecurity", "qSecurityLbl",
                 "qFind", "qFindLbl", "qBarrier",
+                "editorialStatus",
             )
             for qf in _q_fields:
                 if meta.get(qf):

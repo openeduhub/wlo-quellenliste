@@ -3,14 +3,19 @@ merger.py
 ---------
 Mehrstufige Matching-Kaskade (ohne KI):
 
-  Stufe 1  – Korrektur-Override    (Titel exakt / URL-Domain aus Korrekturtabelle)
-  Stufe 2  – publisher_combined    (exakt, case-insensitive)
+  Stufe 1  – Korrektur-Override    (NodeId / Titel / URL-Domain aus Korrekturtabelle)
+  Stufe 2  – publisher_combined    (exakt, umlaut-normalisiert via _norm())
   Stufe 2b – Spider-Titel          (Spider-Nodes: title = echter Quellenname, publisher = Crawler)
-  Stufe 3  – Titel exakt           (case-insensitive)
-  Stufe 4  – Domain-Match          (normalisierte URL ↔ Facetten-Eintrag der wie Domain aussieht)
-  Stufe 5  – Combined-Score        (Domain + Titel + Containment + Token-Overlap + Fuzzy-Token)
-  Stufe 6  – Substring             (Bezugsquelle als Teilstring im Titel)
-  Stufe 7  – Facets-only           (Bezugsquellen ohne eigenen Quelldatensatz)
+  Stufe 3  – Titel exakt           (normalisiert)
+  Stufe 4a – Domain-Match          (normalisierte URL ↔ Facetten-Eintrag der wie Domain aussieht)
+  Stufe 4b – Publisher-Containment (BQ-Name als Teilstring im Publisher oder umgekehrt, min 5 Zeichen)
+  Stufe 5  – Substring             (Bezugsquelle als Teilstring im Titel, min 5 Zeichen)
+  Stufe 5b – Ignored-Publisher     (Titel whitespace-frei gegen Facetten, für WirLernenOnline u.ä.)
+  Stufe 6  – Facets-only           (Bezugsquellen ohne eigenen Quelldatensatz)
+
+Kein Fuzzy-/SequenceMatcher-Matching — alle Stufen nutzen exakte
+String-Operationen (Dict-Lookups, Containment).
+Normalisierung via _norm(): lowercase + NFD + Combining-Marks entfernen (ü→u).
 
 Eingabe:
   records     – Liste von extract_record()-Dicts (aus fetcher.py)
@@ -29,7 +34,6 @@ Ausgabe:
     name, contentCount, matchStage, matchSource, matchConfidence
 """
 
-import difflib
 import re
 import unicodedata
 import logging
@@ -41,12 +45,15 @@ log = logging.getLogger(__name__)
 # Schwellenwerte
 # ---------------------------------------------------------------------------
 
-COMBINED_MIN_SCORE  = 0.75
-COMBINED_MIN_MARGIN = 0.10
-
 DOMAIN_NOISE = frozenset({
     "com", "org", "net", "edu", "info", "blog", "de", "es", "at", "ch",
     "uk", "io", "gov", "nz", "tv", "www", "https", "http", "co", "int",
+})
+
+# Publisher, die bei einer Datenmigration fehlerhaft in ccm:oeh_publisher_combined
+# eingetragen wurden und als Bezugsquelle / Facette ignoriert werden müssen.
+_IGNORED_PUBLISHERS = frozenset({
+    "wirlernenonline",
 })
 
 # Plattform-Domains: Hosting-Systeme, die NICHT als Quell-Domain taugen
@@ -173,57 +180,6 @@ def _domain(url: str | None) -> str:
         return ""
 
 
-def _domain_readable(dom: str) -> str:
-    return " ".join(p for p in dom.split(".") if p not in DOMAIN_NOISE)
-
-
-def _domain_tokens(dom: str) -> set[str]:
-    return {p for p in dom.split(".") if p not in DOMAIN_NOISE and len(p) >= 3}
-
-
-def _combined_score(dom: str, title: str, bq: str) -> float:
-    bq_lower  = bq.lower()
-    bq_norm   = re.sub(r"[\s\-/]", "", bq_lower)
-    dom_norm  = re.sub(r"[\s\-\.]", "", dom)
-    dom_read  = _domain_readable(dom)
-    title_low = (title or "").lower()
-    dom_toks  = _domain_tokens(dom)
-    bq_toks   = set(re.findall(r"\w{3,}", bq_lower))
-
-    s_dom   = difflib.SequenceMatcher(None, dom_read, bq_lower).ratio()
-    s_title = difflib.SequenceMatcher(None, title_low, bq_lower).ratio()
-    base    = max(s_dom, s_title)
-
-    # Containment
-    contain = 0.3 if len(bq_norm) >= 4 and (bq_norm in dom_norm or dom_norm in bq_norm) else 0.0
-
-    # Bezugsquelle als Substring im Titel
-    t_contain = 0.4 if len(bq_lower) >= 5 and bq_lower in title_low else 0.0
-
-    # Token-Overlap (exakt)
-    overlap = 0.0
-    if dom_toks and bq_toks:
-        hits = dom_toks & bq_toks
-        if hits:
-            overlap = 0.35 * len(hits) / max(len(dom_toks), 1)
-
-    # Fuzzy-Token (Akzent- / Schreibvarianten)
-    fuzzy = 0.0
-    matched = 0
-    for tok in dom_toks:
-        best = max(
-            (difflib.SequenceMatcher(None, tok, bt).ratio() for bt in bq_toks),
-            default=0,
-        )
-        if best > 0.75 and len(tok) >= 4:
-            matched += 1
-            fuzzy   += 0.15
-    if dom_toks and matched == len(dom_toks) and len(dom_toks) >= 2:
-        fuzzy += 0.10
-
-    return base + contain + t_contain + overlap + fuzzy
-
-
 # ---------------------------------------------------------------------------
 # Fix 1: NodeId-Deduplication (API-Artefakt)
 # ---------------------------------------------------------------------------
@@ -272,10 +228,10 @@ def merge(
     facets_map: dict[str, int] = {}        # BQ → count  (original case)
     for f in facets:
         v = str(f.get("value") or "").strip()
-        if v:
+        if v and v.lower() not in _IGNORED_PUBLISHERS:
             facets_map[v] = int(f.get("count") or 0)
 
-    fac_lower: dict[str, str] = {k.lower(): k for k in facets_map}   # lowercase → orig
+    fac_lower: dict[str, str] = {_norm(k): k for k in facets_map}     # _norm → orig (Umlaut-safe)
     # Mojibake-aware normalized lookup: _norm(_fix_mojibake(key)) → orig
     fac_norm_mj: dict[str, str] = {}
     for k in facets_map:
@@ -322,12 +278,12 @@ def merge(
             continue
 
         # Bezugsquelle auflösen, wenn sie nicht direkt in den WLO-Facetten vorkommt
-        # 1. Exakte Prüfung (lowercase)
+        # 1. Exakte Prüfung (_norm, Umlaut-safe)
         # 2. Mojibake-normalisierte Prüfung (_norm + _fix_mojibake)
         # 3. Publisher-Fallback aus _fetched_record (nur wenn 1+2 fehlschlagen)
         bq_norm = _norm(bq)
-        if bq.lower() in fac_lower:
-            bq = fac_lower[bq.lower()]  # exact case-insensitive match
+        if bq_norm in fac_lower:
+            bq = fac_lower[bq_norm]  # exact normalized match (Umlaut-safe)
         elif bq_norm in fac_norm_mj:
             resolved = fac_norm_mj[bq_norm]
             log.debug(
@@ -345,8 +301,8 @@ def merge(
         else:
             # Stufe A: Titel-Feld der Korrektur-Zeile als BQ versuchen
             titel = str(row.get("Titel") or "").strip()
-            if titel and titel.lower() in fac_lower:
-                resolved = fac_lower[titel.lower()]
+            if titel and _norm(titel) in fac_lower:
+                resolved = fac_lower[_norm(titel)]
                 log.debug("Korrektur Node %s: Bezugsquelle '%s' → '%s' (Titel exact)", nid[:8] if nid else "?", bq, resolved)
                 bq = resolved
             elif titel and _norm(titel) in fac_norm_mj:
@@ -358,8 +314,8 @@ def merge(
                 fetched = row.get("_fetched_record")
                 if fetched:
                     ftitle = (fetched.get("title") or "").strip()
-                    if ftitle and ftitle.lower() in fac_lower:
-                        resolved = fac_lower[ftitle.lower()]
+                    if ftitle and _norm(ftitle) in fac_lower:
+                        resolved = fac_lower[_norm(ftitle)]
                         log.debug("Korrektur Node %s: Bezugsquelle '%s' → '%s' (fetched title)", nid[:8] if nid else "?", bq, resolved)
                         bq = resolved
                     elif ftitle and _norm(ftitle) in fac_norm_mj:
@@ -369,8 +325,8 @@ def merge(
                     else:
                         # Stufe C: Publisher-Fallback (letzter Ausweg)
                         pub = (fetched.get("publisher") or "").strip()
-                        if pub and pub.lower() in fac_lower:
-                            resolved = fac_lower[pub.lower()]
+                        if pub and _norm(pub) in fac_lower:
+                            resolved = fac_lower[_norm(pub)]
                             log.debug("Korrektur Node %s: Bezugsquelle '%s' → '%s' (WLO publisher)", nid[:8] if nid else "?", bq, resolved)
                             bq = resolved
 
@@ -506,7 +462,7 @@ def merge(
         if r["matchStage"]:
             continue
         pub = r["_pub_norm"]
-        if pub and pub in fac_lower:
+        if pub and pub not in _IGNORED_PUBLISHERS and pub in fac_lower:
             assign(r, fac_lower[pub], 2, "publisher_combined")
 
     # ── Stufe 2b: Spider-Titel ────────────────────────────────────────────
@@ -540,7 +496,7 @@ def merge(
         if tn and tn in fac_lower:
             assign(r, fac_lower[tn], 3, "titel_exakt")
 
-    # ── Stufe 4: Domain-Match ─────────────────────────────────────────────
+    # ── Stufe 4a: Domain-Match ────────────────────────────────────────────
     for r in work:
         if r["matchStage"]:
             continue
@@ -548,33 +504,26 @@ def merge(
         if dom and dom in fac_domain:
             assign(r, fac_domain[dom], 4, "domain_match")
 
-    # ── Stufe 5: Combined-Score ───────────────────────────────────────────
-    unmatched = [r for r in work if not r["matchStage"]]
-    log.info("Stufe 5 Combined-Score: %d offene Datensätze …", len(unmatched))
-
-    for r in unmatched:
-        dom   = r["_domain"]
-        title = r.get("title") or ""
-        if not dom and not title:
+    # ── Stufe 4b: Publisher-Containment ─────────────────────────────────
+    # BQ-Name als Teilstring im Publisher oder umgekehrt (mind. 5 Zeichen).
+    # Beispiel: Publisher "GPM Deutsche Gesellschaft …" → BQ "GPM Deutsche
+    # Gesellschaft für Projektmanagement e. V."
+    for r in work:
+        if r["matchStage"]:
             continue
-
-        scores = sorted(
-            [(_combined_score(dom, title, bq), bq) for bq in fac_list],
-            reverse=True,
-        )
-        if not scores:
+        pub = r["_pub_norm"]
+        if not pub or len(pub) < 5 or pub in _IGNORED_PUBLISHERS:
             continue
+        best_bq, best_len = None, 0
+        for bq_norm, bq_orig in fac_lower.items():
+            if len(bq_norm) < 5:
+                continue
+            if (bq_norm in pub or pub in bq_norm) and len(bq_norm) > best_len:
+                best_bq, best_len = bq_orig, len(bq_norm)
+        if best_bq:
+            assign(r, best_bq, 4, "publisher_containment")
 
-        best_s, best_bq = scores[0]
-        second_s = scores[1][0] if len(scores) > 1 else 0
-        margin   = best_s - second_s
-
-        if best_s >= COMBINED_MIN_SCORE and margin >= COMBINED_MIN_MARGIN:
-            assign(r, best_bq, 5, f"combined_{best_s:.2f}", "HIGH")
-        elif best_s >= COMBINED_MIN_SCORE:
-            assign(r, best_bq, 5, f"combined_{best_s:.2f}_ambig", "MEDIUM")
-
-    # ── Stufe 6: Substring (Bezugsquelle im Titel) ────────────────────────
+    # ── Stufe 5: Substring (Bezugsquelle im Titel) ────────────────────────
     for r in work:
         if r["matchStage"]:
             continue
@@ -586,7 +535,44 @@ def merge(
             if len(bq) >= 5 and bq.lower() in title_low and len(bq) > best_len:
                 best_bq, best_len = bq, len(bq)
         if best_bq:
-            assign(r, best_bq, 6, "substring", "MEDIUM")
+            assign(r, best_bq, 5, "substring", "MEDIUM")
+
+    # ── Stufe 5b: Titel→Facette für Ignored-Publisher (WirLernenOnline) ─
+    # WirLernenOnline wird als publisher_combined oft falsch eingetragen;
+    # der Titel enthält häufig den echten Quellennamen.
+    # Vergleich erfolgt whitespace-frei: "Tüftel Akademie" == "TüftelAkademie"
+    fac_nospace: dict[str, str] = {}          # _norm ohne Leerzeichen → orig
+    for bq in fac_list:
+        key = _norm(bq).replace(" ", "")
+        if len(key) >= 4:
+            fac_nospace.setdefault(key, bq)   # längster/erster gewinnt
+
+    for r in work:
+        if r["matchStage"]:
+            continue
+        pub_norm = r["_pub_norm"]
+        if pub_norm and pub_norm not in _IGNORED_PUBLISHERS:
+            continue                          # nur Ignored-Publisher oder leerer Publisher
+        title = (r.get("title") or "").strip()
+        if len(title) < 4:
+            continue
+        title_ns = _norm(title).replace(" ", "")
+        # 5b-1: Titel exakt == Facette (whitespace-frei)
+        if title_ns in fac_nospace:
+            assign(r, fac_nospace[title_ns], 5, "ignored_pub_title_exact", "MEDIUM")
+            continue
+        # 5b-2: Facette als Substring im Titel (whitespace-frei)
+        # Mindestlänge 10 + ≥40% des Titels, um False Positives wie
+        # "IN FORM" in "Informatik" zu vermeiden
+        best_bq, best_len = None, 0
+        for bq_ns, bq_orig in fac_nospace.items():
+            if len(bq_ns) < 10:
+                continue
+            if bq_ns in title_ns and len(bq_ns) > best_len:
+                if len(bq_ns) / len(title_ns) >= 0.4:
+                    best_bq, best_len = bq_orig, len(bq_ns)
+        if best_bq:
+            assign(r, best_bq, 5, "ignored_pub_title_contains", "MEDIUM")
 
     # ── Qualitäts-Flags initialisieren ───────────────────────────────────
     def _add_flag(r: dict, flag: str) -> None:
@@ -656,21 +642,21 @@ def merge(
     # ── Statistik ─────────────────────────────────────────────────────────
     unmatched_count = sum(1 for r in work if not r["matchStage"])
     labels = {1: "Korrektur", 2: "publisher_combined", 3: "Titel exakt",
-              4: "Domain", 5: "Combined-Score", 6: "Substring"}
+              4: "Domain", 5: "Substring"}
     log.info("── Matching-Ergebnis ──")
     for s in sorted(stats):
         log.info("  Stufe %d %-20s: %d", s, labels.get(s, ""), stats[s])
     log.info("  %-22s: %d", "Nicht zugeordnet", unmatched_count)
     log.info("  %-22s: %d / %d", "Facetten zugeordnet", len(matched_bq), len(facets_map))
 
-    # ── Stufe 7: Facets-only ──────────────────────────────────────────────
-    # Nur kanonische BQs emittieren, die in Stufen 1–6 nicht gemacht wurden.
+    # ── Stufe 6: Facets-only ──────────────────────────────────────────────
+    # Nur kanonische BQs emittieren, die in Stufen 1–5 nicht gemacht wurden.
     # Sub-Varianten (canonical != bq) werden durch ihre Canonical-Gruppe vertreten.
     facets_only: list[dict] = []
     for bq, count in facets_map.items():
         canonical = bq_to_canonical.get(bq, bq)
         if canonical in matched_bq:
-            continue  # Gruppe bereits durch Stufe 1-6 vertreten
+            continue  # Gruppe bereits durch Stufe 1-5 vertreten
         if canonical != bq:
             continue  # Sub-Variante; wird durch Canonical emittiert
         # Ungematchte Canonical-BQ → als facets-only eintragen
@@ -681,7 +667,7 @@ def merge(
             "name":            _fix_mojibake(bq),
             "contentCount":    agg_count,
             "bezugsquellen":   [_fix_mojibake(v) for v in agg_bqs],
-            "matchStage":      7,
+            "matchStage":      6,
             "matchSource":     "facets_only",
             "matchConfidence": "HIGH",
             "qualityFlags":    [],
@@ -721,9 +707,9 @@ def _richness(r: dict) -> tuple:
     Höherer Wert = besser. Vergleich über Tuple-Reihenfolge.
 
     Priorität:
-      1. publisher_match  – Nodes eigenes oeh_publisher_combined == Bezugsquelle
-      2. is_whitelist     – Whitelist-Eintrag aus Korrekturtabelle: verifizierter
+      1. is_whitelist     – Whitelist-Eintrag aus Korrekturtabelle: verifizierter
                             Datensatz mit explizitem Vorrang (Liste=whitelist)
+      2. publisher_match  – Nodes eigenes oeh_publisher_combined == Bezugsquelle
       3. is_spider        – Spider-/Crawler-Quellen haben technischen Vorrang:
                             Sie sind direkt mit einem aktiven Crawler verbunden,
                             damit fast immer korrekt und Duplikaten vorzuziehen.
@@ -734,8 +720,8 @@ def _richness(r: dict) -> tuple:
       8. has_desc         – Beschreibung vorhanden
       9. filled           – Anzahl gefüllter Felder (Vollständigkeit)
     """
+    is_whitelist = 1 if r.get("_whitelisted") else 0  # Whitelist hat höchste Priorität
     pub_match    = 1 if _norm(r.get("publisher") or "") == _norm(r.get("name") or "") and r.get("name") else 0
-    is_whitelist = 1 if r.get("_whitelisted") else 0  # Whitelist-Eintrag: verifizierter Vorrang
     is_spider    = 1 if r.get("isSpider") else 0      # Spider-Quellen haben technischen Vorrang
     stage        = r.get("matchStage") or 9
     stage_score  = -stage                              # -2 > -5 → Stufe 2 > Stufe 5
@@ -747,7 +733,7 @@ def _richness(r: dict) -> tuple:
         1 for v in r.values()
         if v is not None and v != "" and v != [] and v is not False
     )
-    return (pub_match, is_whitelist, is_spider, stage_score, has_node, date_str, has_preview, has_desc, filled)
+    return (is_whitelist, pub_match, is_spider, stage_score, has_node, date_str, has_preview, has_desc, filled)
 
 
 def assign_primary(merged: list[dict]) -> tuple[list[dict], int]:
@@ -798,8 +784,15 @@ def assign_primary(merged: list[dict]) -> tuple[list[dict], int]:
                 if new_key not in best or _richness(r) >= _richness(best[new_key]):
                     best[new_key] = r
             else:
-                # Gleiche Bezugsquelle → reicheren behalten
-                if _richness(r) > _richness(existing):
+                # Gleiche Bezugsquelle → besten Record behalten.
+                # Whitelist-Einträge haben immer Vorrang vor nicht-verifizierten.
+                new_wl = r.get("_whitelisted", False)
+                ex_wl  = existing.get("_whitelisted", False)
+                if new_wl and not ex_wl:
+                    best[name] = r
+                elif not new_wl and ex_wl:
+                    pass  # bestehender Whitelist-Eintrag bleibt
+                elif _richness(r) > _richness(existing):
                     best[name] = r
 
     # Zweiter Durchlauf: isPrimary per Objekt-Identität setzen
@@ -842,7 +835,7 @@ def match_report(merged: list[dict]) -> dict:
         conf_counts[c] = conf_counts.get(c, 0) + 1
 
     total_with_node   = sum(1 for r in merged if r.get("nodeId"))
-    total_facets_only = sum(1 for r in merged if r.get("matchStage") == 7)
+    total_facets_only = sum(1 for r in merged if r.get("matchStage") == 6)
     primary_count     = sum(1 for r in merged if r.get("isPrimary", True))
 
     return {

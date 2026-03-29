@@ -1,493 +1,473 @@
 {
-  "total": 3960,
-  "totalContents": 313235,
-  "withNodeId": 1070,
-  "facetsOnly": 2890,
-  "withContents": 3959,
-  "withoutContents": 1,
+  "total": 3359,
+  "totalContents": 312621,
+  "withNodeId": 690,
+  "facetsOnly": 2669,
+  "withContents": 3349,
+  "withoutContents": 10,
   "erschliessung": {
-    "mitQuelldatensatz": 1070,
-    "nurFacets": 2890,
-    "mitInhalten": 3959,
-    "ohneInhalte": 1,
-    "crawler": 282,
-    "redaktionell": 788
+    "mitQuelldatensatz": 690,
+    "nurFacets": 2669,
+    "mitInhalten": 3349,
+    "ohneInhalte": 10,
+    "crawler": 89,
+    "redaktionell": 601
   },
   "contentBrackets": [
     {
       "value": "0",
-      "count": 1
+      "count": 10
     },
     {
       "value": "1–4",
-      "count": 3185
+      "count": 2930
     },
     {
       "value": "5–9",
-      "count": 191
+      "count": 181
     },
     {
       "value": "10–49",
-      "count": 184
+      "count": 157
     },
     {
       "value": "50–99",
-      "count": 32
+      "count": 19
     },
     {
       "value": "100–499",
-      "count": 61
+      "count": 32
     },
     {
       "value": "500–999",
-      "count": 218
+      "count": 11
     },
     {
       "value": "1k–9.9k",
-      "count": 27
+      "count": 12
     },
     {
       "value": "≥10k",
-      "count": 61
+      "count": 7
     }
   ],
   "matchingStages": {
-    "2": 696,
-    "5": 274,
-    "1": 96,
-    "3": 4,
-    "7": 2890
+    "none": 1,
+    "2": 618,
+    "1": 63,
+    "5": 8,
+    "6": 2669
   },
   "oer": {
-    "count": 332,
-    "percent": 8.4
+    "count": 167,
+    "percent": 5.0
   },
   "licenseDistribution": [
     {
       "value": "COPYRIGHT_FREE",
-      "count": 787
+      "count": 450
     },
     {
       "value": "CC_BY_SA",
-      "count": 155
+      "count": 80
     },
     {
       "value": "CC_BY",
-      "count": 89
-    },
-    {
-      "value": "CUSTOM",
-      "count": 63
+      "count": 44
     },
     {
       "value": "COPYRIGHT_LICENSE",
-      "count": 30
-    },
-    {
-      "value": "CC_BY_NC_ND",
-      "count": 29
+      "count": 22
     },
     {
       "value": "CC_BY_NC_SA",
-      "count": 27
+      "count": 16
+    },
+    {
+      "value": "CC_BY_NC_ND",
+      "count": 14
     },
     {
       "value": "CC_0",
-      "count": 17
-    },
-    {
-      "value": "CC_BY_NC",
       "count": 10
     },
     {
-      "value": "CC_BY_ND",
-      "count": 4
+      "value": "CUSTOM",
+      "count": 8
     },
     {
-      "value": "NONE",
-      "count": 3
+      "value": "CC_BY_NC",
+      "count": 7
     },
     {
       "value": "PDM",
-      "count": 2
+      "count": 4
     },
     {
-      "value": "UNTERRICHTS_UND_LEHRMEDIEN",
+      "value": "CC_BY_ND",
       "count": 1
     }
   ],
   "accessQuality": {
     "accessRaw": {
-      "known": 151,
-      "okCount": 34,
-      "average": 2.6
+      "known": 128,
+      "okCount": 19,
+      "average": 2.4
     },
     "priceRaw": {
-      "known": 930,
-      "okCount": 845,
-      "average": 4.8
-    },
-    "qAdvertisement": {
-      "known": 759,
-      "okCount": 610,
-      "average": 4.4
-    },
-    "loginRaw": {
-      "known": 867,
-      "okCount": 749,
-      "average": 4.3
-    },
-    "gdprRaw": {
-      "known": 184,
-      "okCount": 182,
+      "known": 466,
+      "okCount": 437,
       "average": 4.9
     },
+    "qAdvertisement": {
+      "known": 371,
+      "okCount": 332,
+      "average": 4.7
+    },
+    "loginRaw": {
+      "known": 457,
+      "okCount": 410,
+      "average": 4.5
+    },
+    "gdprRaw": {
+      "known": 63,
+      "okCount": 63,
+      "average": 5.0
+    },
     "qBarrier": {
-      "known": 110,
-      "okCount": 6,
-      "average": 0.7
+      "known": 57,
+      "okCount": 4,
+      "average": 0.5
     }
   },
   "legalQuality": {
     "lawMinors": {
-      "known": 285,
-      "okCount": 285,
+      "known": 188,
+      "okCount": 188,
       "average": 5.0
     },
     "lawPrivacy": {
-      "known": 38,
-      "okCount": 34,
+      "known": 13,
+      "okCount": 11,
       "average": 4.5
     },
     "lawPersonal": {
-      "known": 277,
-      "okCount": 277,
+      "known": 186,
+      "okCount": 186,
       "average": 5.0
     },
     "lawCriminal": {
-      "known": 288,
-      "okCount": 288,
+      "known": 188,
+      "okCount": 188,
       "average": 5.0
     },
     "lawCopyright": {
-      "known": 285,
-      "okCount": 285,
+      "known": 187,
+      "okCount": 187,
       "average": 5.0
     }
   },
   "contentQuality": {
     "qCurrentness": {
-      "known": 220,
-      "okCount": 186,
-      "average": 4.1
+      "known": 155,
+      "okCount": 135,
+      "average": 4.2
     },
     "qNeutralness": {
-      "known": 197,
-      "okCount": 185,
+      "known": 144,
+      "okCount": 130,
       "average": 4.7
     },
     "qLanguage": {
-      "known": 205,
-      "okCount": 178,
+      "known": 147,
+      "okCount": 125,
       "average": 4.5
     },
     "qCorrectness": {
-      "known": 157,
-      "okCount": 156,
+      "known": 133,
+      "okCount": 133,
       "average": 4.2
     },
     "qMedial": {
-      "known": 200,
-      "okCount": 170,
+      "known": 146,
+      "okCount": 124,
       "average": 4.1
     },
     "qTransparent": {
-      "known": 205,
-      "okCount": 137,
-      "average": 4.1
+      "known": 152,
+      "okCount": 83,
+      "average": 3.8
     },
     "qDidactics": {
-      "known": 189,
-      "okCount": 119,
+      "known": 146,
+      "okCount": 95,
       "average": 3.8
     }
   },
   "topSubjects": [
     {
-      "value": "Allgemein",
-      "count": 187
-    },
-    {
       "value": "Biologie",
-      "count": 176
-    },
-    {
-      "value": "Spanisch",
-      "count": 163
-    },
-    {
-      "value": "Chemie",
-      "count": 153
+      "count": 145
     },
     {
       "value": "Nachhaltigkeit",
-      "count": 139
-    },
-    {
-      "value": "Physik",
-      "count": 103
-    },
-    {
-      "value": "Mathematik",
       "count": 97
     },
     {
-      "value": "Informatik",
-      "count": 91
-    },
-    {
-      "value": "Deutsch",
-      "count": 89
-    },
-    {
-      "value": "Geschichte",
+      "value": "Chemie",
       "count": 86
     },
     {
-      "value": "Musik",
-      "count": 78
-    },
-    {
-      "value": "Englisch",
-      "count": 72
+      "value": "Allgemein",
+      "count": 86
     },
     {
       "value": "Berufliche Bildung",
-      "count": 72
+      "count": 62
     },
     {
-      "value": "Deutsch als Zweitsprache",
-      "count": 70
-    },
-    {
-      "value": "Medienbildung",
-      "count": 58
-    },
-    {
-      "value": "Sport",
+      "value": "Spanisch",
       "count": 56
     },
     {
-      "value": "Wirtschaftskunde",
+      "value": "Physik",
+      "count": 55
+    },
+    {
+      "value": "Geschichte",
       "count": 54
     },
     {
-      "value": "Politik",
-      "count": 48
+      "value": "Informatik",
+      "count": 53
     },
     {
-      "value": "Mediendidaktik",
-      "count": 45
+      "value": "Deutsch",
+      "count": 50
+    },
+    {
+      "value": "Mathematik",
+      "count": 47
+    },
+    {
+      "value": "Deutsch als Zweitsprache",
+      "count": 40
+    },
+    {
+      "value": "Englisch",
+      "count": 36
+    },
+    {
+      "value": "Musik",
+      "count": 35
     },
     {
       "value": "Zeitgemäße Bildung",
-      "count": 45
+      "count": 34
+    },
+    {
+      "value": "Medienbildung",
+      "count": 30
+    },
+    {
+      "value": "Politik",
+      "count": 27
     },
     {
       "value": "Geografie",
-      "count": 39
-    },
-    {
-      "value": "Französisch",
-      "count": 39
+      "count": 25
     },
     {
       "value": "Kunst",
-      "count": 37
-    },
-    {
-      "value": "Ethik",
-      "count": 36
-    },
-    {
-      "value": "Pädagogik",
-      "count": 36
-    },
-    {
-      "value": "Religion",
-      "count": 30
-    },
-    {
-      "value": "Projektmanagement",
-      "count": 30
-    },
-    {
-      "value": "Arbeitslehre",
-      "count": 29
-    },
-    {
-      "value": "Philosophie",
-      "count": 29
-    },
-    {
-      "value": "MINT",
-      "count": 27
-    },
-    {
-      "value": "Darstellendes Spiel",
-      "count": 27
-    },
-    {
-      "value": "Sachunterricht",
       "count": 24
     },
     {
-      "value": "Gesundheit",
+      "value": "Wirtschaftskunde",
+      "count": 24
+    },
+    {
+      "value": "Pädagogik",
+      "count": 24
+    },
+    {
+      "value": "Ethik",
+      "count": 21
+    },
+    {
+      "value": "Philosophie",
+      "count": 21
+    },
+    {
+      "value": "Sport",
       "count": 20
     },
     {
-      "value": "Latein",
+      "value": "Projektmanagement",
       "count": 19
     },
     {
-      "value": "Sozialpädagogik",
+      "value": "Mediendidaktik",
+      "count": 18
+    },
+    {
+      "value": "Sachunterricht",
       "count": 17
     },
     {
-      "value": "Türkisch",
+      "value": "Religion",
       "count": 16
     },
     {
-      "value": "Astronomie",
+      "value": "MINT",
+      "count": 16
+    },
+    {
+      "value": "Französisch",
       "count": 15
     },
     {
-      "value": "Psychologie",
-      "count": 14
+      "value": "Arbeitslehre",
+      "count": 15
     },
     {
-      "value": "Ernährung und Hauswirtschaft",
+      "value": "Sozialpädagogik",
+      "count": 12
+    },
+    {
+      "value": "Latein",
       "count": 11
     },
     {
-      "value": "Wirtschaft und Verwaltung",
-      "count": 11
-    },
-    {
-      "value": "Gesellschaftskunde",
+      "value": "Gesundheit",
       "count": 10
     },
     {
-      "value": "Elektrotechnik",
+      "value": "Darstellendes Spiel",
       "count": 10
     },
     {
-      "value": "Italienisch",
+      "value": "Türkisch",
       "count": 8
     },
     {
-      "value": "null",
+      "value": "Wirtschaft und Verwaltung",
       "count": 7
+    },
+    {
+      "value": "Astronomie",
+      "count": 6
+    },
+    {
+      "value": "Italienisch",
+      "count": 6
+    },
+    {
+      "value": "Psychologie",
+      "count": 6
     },
     {
       "value": "Umweltgefährdung, Umweltschutz",
-      "count": 7
+      "count": 5
     },
     {
-      "value": "Interkulturelle Bildung",
-      "count": 6
+      "value": "Gesellschaftskunde",
+      "count": 4
     },
     {
       "value": "Werken",
-      "count": 6
+      "count": 4
     },
     {
-      "value": "Weiterbildung",
-      "count": 5
+      "value": "Schulfächer",
+      "count": 4
     },
     {
-      "value": "Bautechnik",
-      "count": 5
+      "value": "Ernährung und Hauswirtschaft",
+      "count": 3
     },
     {
-      "value": "Russisch",
-      "count": 5
+      "value": "Alt-Griechisch",
+      "count": 3
+    },
+    {
+      "value": "Interkulturelle Bildung",
+      "count": 3
+    },
+    {
+      "value": "Open Educational Resources",
+      "count": 3
+    },
+    {
+      "value": "Sonderpädagogik",
+      "count": 3
+    },
+    {
+      "value": "null",
+      "count": 2
     }
   ],
   "topEducationalContext": [
     {
       "value": "Sekundarstufe II",
-      "count": 961
+      "count": 502
     },
     {
       "value": "Sekundarstufe I",
-      "count": 937
+      "count": 481
     },
     {
       "value": "Erwachsenenbildung",
-      "count": 460
+      "count": 240
     },
     {
       "value": "Primarstufe",
-      "count": 407
+      "count": 227
     },
     {
       "value": "Berufliche Bildung",
-      "count": 356
+      "count": 218
     },
     {
       "value": "Hochschule",
-      "count": 277
+      "count": 173
     },
     {
       "value": "Fortbildung",
-      "count": 97
+      "count": 69
     },
     {
       "value": "Elementarbereich",
-      "count": 88
+      "count": 53
     },
     {
       "value": "Schule",
-      "count": 49
+      "count": 42
     },
     {
       "value": "Förderschule",
-      "count": 43
+      "count": 31
     },
     {
       "value": "Fernunterricht",
-      "count": 27
+      "count": 28
     },
     {
       "value": "Informelles Lernen",
-      "count": 15
+      "count": 12
     }
   ],
   "topLanguages": [
     {
       "value": "Deutsch (Deutschland)",
-      "count": 1062
+      "count": 631
     },
     {
       "value": "Spanisch",
-      "count": 38
-    },
-    {
-      "value": "Deutsch",
-      "count": 34
+      "count": 22
     },
     {
       "value": "Englisch",
-      "count": 18
-    },
-    {
-      "value": "Französisch",
-      "count": 2
-    },
-    {
-      "value": "en-US-LEARN",
-      "count": 1
+      "count": 16
     },
     {
       "value": "null",
@@ -497,123 +477,115 @@
   "topLrt": [
     {
       "value": "Quelle",
-      "count": 1070
-    },
-    {
-      "value": "Übungsmaterial",
-      "count": 80
-    },
-    {
-      "value": "Video",
-      "count": 78
-    },
-    {
-      "value": "Unterrichtsbaustein/-reihe",
-      "count": 63
+      "count": 681
     },
     {
       "value": "Tool",
-      "count": 62
+      "count": 23
     },
     {
       "value": "Webseite",
-      "count": 58
+      "count": 19
     },
     {
       "value": "Methoden",
-      "count": 54
-    },
-    {
-      "value": "Arbeitsblatt",
-      "count": 52
-    },
-    {
-      "value": "Unterrichtsidee",
-      "count": 47
-    },
-    {
-      "value": "Unterrichtsplan",
-      "count": 41
-    },
-    {
-      "value": "Audio",
-      "count": 36
+      "count": 16
     },
     {
       "value": "Bild",
-      "count": 34
+      "count": 14
     },
     {
       "value": "Bildungsangebot",
-      "count": 27
-    },
-    {
-      "value": "Event, Wettbewerb",
-      "count": 16
-    },
-    {
-      "value": "Interaktives Medium",
-      "count": 16
-    },
-    {
-      "value": "Kurs",
-      "count": 15
-    },
-    {
-      "value": "Experiment",
       "count": 13
     },
     {
+      "value": "Unterrichtsbaustein/-reihe",
+      "count": 13
+    },
+    {
+      "value": "Unterrichtsidee",
+      "count": 11
+    },
+    {
+      "value": "Video",
+      "count": 11
+    },
+    {
+      "value": "Übungsmaterial",
+      "count": 7
+    },
+    {
+      "value": "Unterrichtsplan",
+      "count": 7
+    },
+    {
+      "value": "Audio",
+      "count": 6
+    },
+    {
+      "value": "Arbeitsblatt",
+      "count": 6
+    },
+    {
+      "value": "Event, Wettbewerb",
+      "count": 5
+    },
+    {
+      "value": "Kurs",
+      "count": 5
+    },
+    {
       "value": "Noten",
-      "count": 12
-    },
-    {
-      "value": "News",
-      "count": 11
-    },
-    {
-      "value": "Nachschlagewerk",
-      "count": 11
-    },
-    {
-      "value": "Artikel",
-      "count": 9
-    },
-    {
-      "value": "Lernspiel",
-      "count": 9
-    },
-    {
-      "value": "Handout",
-      "count": 9
-    },
-    {
-      "value": "(Lehr-)Buch",
-      "count": 8
-    },
-    {
-      "value": "Entdeckendes Lernen",
-      "count": 6
-    },
-    {
-      "value": "Textbausteine",
-      "count": 6
-    },
-    {
-      "value": "Tests / Fragebögen",
-      "count": 6
-    },
-    {
-      "value": "Webblog",
       "count": 4
     },
     {
-      "value": "Kreative, offene Aktivität",
+      "value": "Interaktives Medium",
+      "count": 4
+    },
+    {
+      "value": "Textbausteine",
+      "count": 4
+    },
+    {
+      "value": "Tests / Fragebögen",
       "count": 3
     },
     {
-      "value": "Primärmaterial",
+      "value": "News",
       "count": 3
+    },
+    {
+      "value": "Regelungsintrumente",
+      "count": 2
+    },
+    {
+      "value": "Entdeckendes Lernen",
+      "count": 1
+    },
+    {
+      "value": "Webblog",
+      "count": 1
+    },
+    {
+      "value": "Tabellen",
+      "count": 1
+    },
+    {
+      "value": "Daten",
+      "count": 1
+    },
+    {
+      "value": "Artikel",
+      "count": 1
+    },
+    {
+      "value": "Regularien, Handbuch",
+      "count": 1
+    },
+    {
+      "value": "Wort-/Vokabelliste",
+      "count": 1
     }
   ],
   "topByContents": [

@@ -163,7 +163,7 @@ def compute(records: list[dict]) -> dict:
 
     # Erschließungsstatus
     with_node     = sum(1 for r in records if r.get("nodeId"))
-    facets_only   = sum(1 for r in records if r.get("matchStage") == 7)
+    facets_only   = sum(1 for r in records if r.get("matchStage") == 6)
     with_contents = sum(1 for r in records if (r.get("contentCount") or 0) > 0)
     no_contents   = total - with_contents
 
