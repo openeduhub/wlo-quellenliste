@@ -13,21 +13,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      # --- Webkomponente bauen ---
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
-
       - name: Install webcomponent dependencies
         working-directory: webcomponent
         run: npm ci
-
       - name: Build webcomponent (IIFE bundle)
         working-directory: webcomponent
         run: npx ng build --configuration=production
-
       - name: Copy bundles to backend
         run: |
           mkdir -p backend/public/wc
@@ -35,21 +30,14 @@ jobs:
           cp webcomponent/dist/wlosources-ng/polyfills.js backend/public/wc/polyfills.js
           cp webcomponent/dist/wlosources-ng/runtime.js   backend/public/wc/runtime.js
           cp webcomponent/dist/wlosources-ng/styles.css   backend/public/wc/styles.css
-
-      # --- Docker Build & Push ---
       - name: Inject slug/short variables
         uses: rlespinasse/github-slug-action@v4
-
       - name: Login to DockerHub
-        if: ${{ secrets.DOCKERHUB_PASSWORD != '' }}
         uses: azure/docker-login@v1
         with:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
-
       - name: Build Docker image
         run: docker build --tag ${{ github.repository }}:${{ env.GITHUB_REF_SLUG }} .
-
       - name: Push to DockerHub
-        if: ${{ github.event_name != 'pull_request' && secrets.DOCKERHUB_PASSWORD != '' }}
         run: docker push ${{ github.repository }}:${{ env.GITHUB_REF_SLUG }}
